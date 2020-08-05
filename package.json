@@ -1,5 +1,5 @@
 {
-  "name": "my-redux-app",
+  "name": "survey-tsc",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
