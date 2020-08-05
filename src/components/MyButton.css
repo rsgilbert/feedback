@@ -1,0 +1,17 @@
+.my-button {
+    background-color: var(--theme-color);
+    padding: .5em 1.5em;
+    border: 0;
+    border-radius: .25em;
+    border: 2px solid var(--theme-color);
+    color: white;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 1em;
+    cursor: pointer;
+}
+
+.my-button:hover {
+    background-color: transparent;
+    color: var(--theme-color);
+}

@@ -12,8 +12,8 @@
     text-align: center;
 }
 
-.header--logo {
-    width: 2em;
+.header__logo {
+    width: 2.3em;
     position: absolute;
     top: .5em;
     left: 1em;
