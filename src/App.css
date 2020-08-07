@@ -29,10 +29,11 @@ body {
     font-family: Helvetica, Arial, sans-serif;
 }
 
-/* .container { 
-  max-width: 1080px;
+.container { 
+  max-width: 1000px;
   margin: 0 auto;
-} */
+  padding: 0 1em;
+}
 
 a:link {
     color: #1476b8;

@@ -1,0 +1,28 @@
+.search {
+    display: flex;
+    justify-content: space-between;
+}
+
+.search > div {
+    flex: 1;
+}
+
+input {
+    padding: .5em 1.5em;
+    line-height: 2;
+    flex: 1;
+    border-radius: .5em 0 0 .5em;
+    border: 2px solid var(--theme-color);
+}
+
+button {
+    flex: 0;
+    background-color: var(--theme-color);
+    padding: 0 1em;
+    border: 1px solid var(--theme-color);
+    border-radius: 0 .5em .5em 0;
+    color: white;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
