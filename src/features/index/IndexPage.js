@@ -19,7 +19,7 @@ export const IndexPage = props => {
             <div className="container">
                 <div className="index">
                     <p className="index--title">
-                        We appreciate your feedback!
+                        Welcome!
                     </p>
                     <p className="index--subtitle">
                         Thank you for taking time to fill in our feedback form.

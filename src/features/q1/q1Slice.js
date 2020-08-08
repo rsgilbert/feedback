@@ -33,10 +33,15 @@ const q1Slice = createSlice({
     name: "q1",
     initialState,
     reducers: {
-
+        answerIdUpdated(state, action) {
+            const { answerId } = action.payload
+            state.answerId = answerId
+        }
     }
 })
 
+export const { answerIdUpdated } = q1Slice.actions
+ 
 export default q1Slice.reducer
 
 export const selectQuestion = state => state.q1.question
