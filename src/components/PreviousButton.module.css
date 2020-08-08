@@ -1,4 +1,4 @@
-.nextbutton {
+.previousbutton {
     background-color: var(--theme-color);
     padding: .5em 1.5em;
     border: 0;
@@ -12,11 +12,11 @@
     position: fixed;
     z-index: 1;
     bottom: 1em;
-    right: 2em;
+    left: 2em;
 }
 
 
-.nextbutton:hover {
+.previousbutton:hover {
     background-color: white;
     color: black;
 }

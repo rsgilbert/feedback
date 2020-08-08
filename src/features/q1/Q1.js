@@ -7,7 +7,7 @@ import { Question } from '../../components/Question'
 import { Search } from '../../components/Search'
 import { Option } from '../../components/Option'
 import { NextButton } from '../../components/NextButton'
-import { selectSearch } from '../search/searchSlice'
+import { selectSearch, searchCleared } from '../search/searchSlice'
 import { useHistory } from 'react-router-dom'
 
 
@@ -20,7 +20,11 @@ export const Q1 = props => {
     const dispatch = useDispatch()
     const history = useHistory()
 
-    const goToPage2 = () => history.push("/2")
+    const goToPage2 = () => {
+        dispatch(searchCleared())
+        history.push("/2")
+
+    }
 
     const setAnswerId = answerId => dispatch(answerIdUpdated({ answerId }))
     

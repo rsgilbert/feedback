@@ -1,9 +1,8 @@
-import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
-import { client } from '../../api/client'
+import { createSlice } from '@reduxjs/toolkit'
 
 
 const initialState = {
-    question: "What is your organization?",
+    question: "1. What is your organization?",
     options: [
         {
             id: "1",
