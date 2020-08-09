@@ -5,6 +5,11 @@
   --theme-color--dark: #7d881e;
 }
 
+@media(min-width: 50em) {
+  :root {
+      font-size: 1em;
+  }
+}
 .App {
   text-align: center;
 }

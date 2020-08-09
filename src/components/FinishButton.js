@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styles from './NextButton.module.css'
 import { useHistory } from 'react-router-dom'
 import './FinishButton.css'
@@ -7,9 +7,10 @@ import classNames from 'classnames'
 
 export const FinishButton = props => {
     const history = useHistory()
+    const [isModalOpen, setIsModalOpen] = useState(false)
 
     const handleClick = () => {
-        
+        setIsModalOpen(true)
     }
 
     const goToHome = () => history.push("/")
@@ -21,10 +22,12 @@ export const FinishButton = props => {
                 onClick={handleClick}>
                 Finish
             </button>
-            <div className="finishbackground">
+            <div className={classNames({
+                finishbackground: true,
+                hidemodal: !isModalOpen
+            })}>
                 <div className={classNames({
-                    finishmessage: true,
-                    notdisplayed: props.isFinished
+                    finishmessage: true
                 })}
                     >
                     <h1>Thank you!</h1>
