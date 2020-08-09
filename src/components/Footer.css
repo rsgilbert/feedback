@@ -1,0 +1,34 @@
+.footer {
+    background-color: rgb(192, 201, 178);
+    margin-top: 2em;
+    padding: 1em 2em;
+    padding-bottom: 5em;
+    color:rgb(112, 100, 31);
+}
+
+.footer-main {
+    display: flex;
+}
+
+.footer-main > * {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    text-align: center;
+}
+
+.footer-main h1 {
+    font-size: 1.2em;
+
+}
+
+.footer-main a {
+    text-align: center;
+    padding: .25em;
+    color:rgb(112, 100, 31);
+}
+
+.footer p {
+    text-align: center;
+    font-weight: bold;
+}

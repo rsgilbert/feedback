@@ -18,10 +18,10 @@ export const IndexPage = props => {
             <Header />
             <div className="container">
                 <div className="index">
-                    <p className="index--title">
+                    <h1>
                         Welcome!
-                    </p>
-                    <p className="index--subtitle">
+                    </h1>
+                    <p>
                         Thank you for taking time to fill in our feedback form.
                     </p>
                     <MyButton title="Begin" handleClick={ goToPage1 } />

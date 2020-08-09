@@ -1,7 +1,7 @@
 import React from 'react'
 import { Header } from '../../components/Header'
 import { useSelector, useDispatch } from 'react-redux'
-import { selectQuestion, selectAllOptions, selectAnswerId, answerIdUpdated } from './q2Slice'
+import { selectQuestion, selectAllOptions, selectAnswerId, answerIdUpdated } from './q6Slice'
 import { Question } from '../../components/Question'
 import { Search } from '../../components/Search'
 import { Option } from '../../components/Option'
@@ -9,17 +9,16 @@ import { NextButton } from '../../components/NextButton'
 import { selectSearch, searchCleared } from '../search/searchSlice'
 import { useHistory } from 'react-router-dom'
 import { PreviousButton } from '../../components/PreviousButton'
+import { FinishButton } from '../../components/FinishButton'
 
 
-export const Q2 = props => {
+export const Q6 = props => {
     const question = useSelector(selectQuestion)
     const allOptions = useSelector(selectAllOptions)
     const search = useSelector(selectSearch)
     const answerId = useSelector(selectAnswerId)
     const dispatch = useDispatch()
  
-  
-
     const setAnswerId = answerId => dispatch(answerIdUpdated({ answerId }))
     
     const options = allOptions.filter(o => o.option.toLowerCase().includes(search.toLowerCase()))
@@ -37,11 +36,10 @@ export const Q2 = props => {
             <Header />
             <div className="container">
                 <Question question={question} />
-                <Search />
                 { optionsContent }
             </div>
             <PreviousButton />
-            <NextButton />
+            <FinishButton />
         </div>
     )
 }

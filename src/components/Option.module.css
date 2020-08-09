@@ -7,15 +7,16 @@
     cursor: pointer;
 }
 
-.answer,
 .option:hover {
-    background-color: var(--theme-color);
+    background-color: rgb(164, 187, 128);
     color: white;
 }
 
 .answer {
     padding-top: 1.5em;
     padding-bottom: 1.5em;
+    background-color: var(--theme-color);
+    color: white;
 }
 
 

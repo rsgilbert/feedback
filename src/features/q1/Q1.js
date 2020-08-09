@@ -8,7 +8,6 @@ import { Search } from '../../components/Search'
 import { Option } from '../../components/Option'
 import { NextButton } from '../../components/NextButton'
 import { selectSearch, searchCleared } from '../search/searchSlice'
-import { useHistory } from 'react-router-dom'
 
 
 
@@ -18,14 +17,8 @@ export const Q1 = props => {
     const search = useSelector(selectSearch)
     const answerId = useSelector(selectAnswerId)
     const dispatch = useDispatch()
-    const history = useHistory()
-
-    const goToPage2 = () => {
-        dispatch(searchCleared())
-        history.push("/2")
-
-    }
-
+   
+  
     const setAnswerId = answerId => dispatch(answerIdUpdated({ answerId }))
     
     const options = allOptions.filter(o => o.option.toLowerCase().includes(search.toLowerCase()))
@@ -46,8 +39,7 @@ export const Q1 = props => {
                 <Search />
                 { optionsContent }
             </div>
-            <NextButton 
-                handleClick={goToPage2}/>
+            <NextButton />
         </div>
     )
 }

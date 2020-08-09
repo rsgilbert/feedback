@@ -2,6 +2,7 @@ import { createSlice } from '@reduxjs/toolkit'
 
 
 const initialState = {
+    id: "2",
     question: "2. Which Regional Center did you visit?",
     options: [
         {

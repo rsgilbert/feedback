@@ -2,16 +2,16 @@ import React from 'react'
 import styles from './Option.module.css'
 import classNames from 'classnames'
 
-export const Option = props => {
+export const MultipleOption = props => {
 
-    const answerId = props.answerId
-
-    const isAnswer = answerId === props.option.id
+    const answers = props.answers
+    const matchingAnswer = answers.find(ans => ans.answerId === props.option.id)
+    const isAnswer = Boolean(matchingAnswer)
 
     const optionSelected = () => {
         props.handleClick(props.option.id)
     }
-
+    
     return (
         <div
             className={classNames({
