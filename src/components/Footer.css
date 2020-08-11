@@ -8,6 +8,8 @@
 
 .footer-main {
     display: flex;
+    margin: 0 auto;
+    max-width: 50%;
 }
 
 .footer-main > * {

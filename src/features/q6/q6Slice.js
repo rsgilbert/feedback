@@ -11,19 +11,19 @@ const initialState = {
         },
         {
             id: "2",
-            option: "Excellent"
+            option: "Excellent 🎉"
         },
         {
             id: "3",
-            option: "Good"
+            option: "Good 👍"
         },
         {
             id: "4",
-            option: "Fair"
+            option: "Fair 🚀"
         },
         {
             id: "5",
-            option: "Poor"
+            option: "Poor 👀"
         }
     ],
     answerId: null

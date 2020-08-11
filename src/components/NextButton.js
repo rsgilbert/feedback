@@ -1,9 +1,10 @@
 import React from 'react'
-import styles from './NextButton.module.css'
+import './NextButton.css'
 import { useHistory } from 'react-router-dom'
 import { getQuestionNumber } from '../utils'
 import { useDispatch } from 'react-redux'
 import { searchCleared } from '../features/search/searchSlice'
+
 
 
 export const NextButton = props => {
@@ -18,10 +19,12 @@ export const NextButton = props => {
     }
 
     return (
-        <button 
-            className={styles.nextbutton}
-            onClick={handleClick}>
-            Next
-        </button>
+        <div className="container nextcontainer">
+            <button 
+                className="nextbutton"
+                onClick={handleClick}>
+                Next
+            </button>
+        </div>
     )
 }

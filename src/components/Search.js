@@ -1,5 +1,5 @@
 import React from 'react'
-import styles from './Search.module.css'
+import './Search.css'
 import { selectSearch, searchUpdated } from '../features/search/searchSlice'
 import { useSelector, useDispatch } from 'react-redux'
 
@@ -12,16 +12,20 @@ export const Search = props => {
         dispatch(searchUpdated({ search: e.target.value }))
     
     return (
-        <div className={styles.search}>
-            <div className={styles.input}>
+        <div className="search">
+            <div className="search-input">
                 <input 
-                    placeholder="Search" 
+                    placeholder="Search"
                     onChange={onSearchChanged}
-                    value={search}
+                    value={search}/>
+            </div>          
+
+            <div className="search-image">
+                <img
+                    src="/search.png"
                     />
-            </div>
-            
-            <button>Search</button>
+            </div>            
         </div>
+            
     )
 }

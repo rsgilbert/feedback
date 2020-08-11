@@ -1,0 +1,38 @@
+.search {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1.25px solid var(--theme-color);
+    border-radius: .3em;
+}
+
+.search-input {
+    display: block;
+    width: 100%;
+    line-height: 2;
+    padding: .5em;
+    border-radius: .5em;
+    flex: 1;
+}
+
+.search-input > input {
+    display: block;
+    width: 100%;
+    border: 0;
+}
+
+
+
+.search-image {
+    background-color: var(--theme-color);
+    border-radius: 0 .2em .2em 0;
+    flex: 0 1 2.2em;
+
+
+}
+
+
+
+
+

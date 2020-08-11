@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import styles from './NextButton.module.css'
+import  './NextButton.css'
 import { useHistory } from 'react-router-dom'
 import './FinishButton.css'
 import { MyButton } from './MyButton'
@@ -18,7 +18,7 @@ export const FinishButton = props => {
     return (
         <>
             <button 
-                className={styles.nextbutton}
+                className="nextbutton"
                 onClick={handleClick}>
                 Finish
             </button>

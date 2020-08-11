@@ -7,19 +7,19 @@ const initialState = {
     options: [
         {
             id: "1",
-            option: "Excellent"
+            option: "Excellent 🎉"
         },
         {
             id: "2",
-            option: "Good"
+            option: "Good 👍"
         },
         {
             id: "3",
-            option: "Fair"
+            option: "Fair 🚀"
         },
         {
             id: "4",
-            option: "Poor"
+            option: "Poor 👀"
         }
     ],
     answerId: null
