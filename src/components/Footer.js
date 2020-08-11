@@ -22,7 +22,7 @@ export const Footer = props => {
 
                 </div> */}
             </div>
-            <p>Ministry of Finance Planning and Economic Development</p>
+            <p>&copy; Ministry of Finance Planning and Economic Development 2020</p>
             <p>Uganda</p>
         </footer>
     )

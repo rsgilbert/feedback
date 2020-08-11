@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import styles from './OtherModal.module.css'
+import './OtherModal.css'
 import classNames from 'classnames'
 import { MyButton } from './MyButton'
 import { useSelector, useDispatch } from 'react-redux'
@@ -11,6 +11,7 @@ export const OtherModal = props => {
 
     const other= useSelector(selectOther)
     const isModalOpen = useSelector(selectIsModalOpen)
+    // const isModalOpen = true
 
     const [otherValue, setOtherValue] = useState(other)
 
@@ -25,25 +26,32 @@ export const OtherModal = props => {
     }
 
    
-    const nothing = () => {}
     return (
         <div className={classNames({
-            [styles.othermodal]: true,
-            [styles.notdisplayed]: !isModalOpen
+            othermodal: true,
+            notdisplayed: !isModalOpen
         })}>
-            <div className={styles.dialogbox} onClick={nothing}>
-                <h1>Reason</h1>
+            <div className="dialogbox">
+                <h1>Other reason</h1>
                 <button 
-                    className={styles.close}
-                    onClick={closeModal}>Close</button>
+                    className="close"
+                    onClick={closeModal}
+                    >
+                    &times;
+                </button>
                 <input 
                     placeholder="Other"
-                    autoFocus
                     value={otherValue}
                     onChange={handleChange}
-
                     />
-                <MyButton title="submit" handleClick={handleSubmit}/>
+                <div className="actions">
+                    <button
+                        className="submit"
+                        onClick={handleSubmit}>
+                        Submit
+                    </button>
+                </div>
+                
             </div>
         </div>
     )
