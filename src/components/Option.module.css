@@ -1,31 +1,20 @@
 .option {
     border: 1px solid var(--theme-color);
-    padding: 1em;
     border-radius: .25em;
     margin-top: 1em;
     font-weight: bold;
     cursor: pointer;
+    display: flex;
+    align-items: center;
 }
-
-.option:hover {
-    background-color: rgb(164, 187, 128);
-    color: white;
-}
-
-.answer {
-    padding-top: 1.5em;
-    padding-bottom: 1.5em;
-    background-color: var(--theme-color);
-    color: white;
-}
-
-
 
 .verticalbar {
-    padding: 1em .2em;
-    margin-right: .5em;
+    padding: 1.5em .4em;
     border-radius: .1em 0 0 .1em;
-    background-color: white;
+    margin: -1px .5em -1px -1px;
     display: inline;
+}
 
+.colored {
+    background-color: var(--theme-color);
 }

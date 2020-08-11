@@ -33,15 +33,14 @@ export const Q2 = props => {
     )
     
     return (
-        <div>
+        <>
             <Header />
             <div className="container">
                 <Question question={question} />
-                <Search />
                 { optionsContent }
             </div>
             <PreviousButton />
             <NextButton />
-        </div>
+        </>
     )
 }

@@ -1,16 +1,23 @@
 .search {
     display: flex;
-    justify-content: space-between;
 }
 
-.search > div {
+
+.input {
     flex: 1;
 }
 
+.search input {
+    font-size: 1.2em;
+    width: 100%;
+    line-height: 2;
+    padding: .5em;
+    border-radius: .5em 0 0 .5em;
+    border: 2px solid var(--theme-color);
+}
 
 
 .search button {
-    flex: 0;
     background-color: var(--theme-color);
     padding: 0 1em;
     border: 1px solid var(--theme-color);
@@ -18,5 +25,6 @@
     color: white;
     text-transform: uppercase;
     font-weight: bold;
+    display: block;
 }
 

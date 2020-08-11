@@ -14,16 +14,17 @@ export const Option = props => {
 
     return (
         <div
-            className={classNames({
-                [styles.answer]: isAnswer,
-                [styles.option]: true
-            })}
-            onClick={optionSelected}>
+            className={styles.option}
+            onClick={optionSelected}
+            >
             <div className={
                 classNames({
-                    [styles.verticalbar]: isAnswer
-                })}></div>
-            {props.option.option}
+                    [styles.verticalbar]: true,
+                    [styles.colored]: isAnswer
+                })} />
+            <div className={styles.data}>
+                {props.option.option}
+            </div>
         </div>
     )
 }

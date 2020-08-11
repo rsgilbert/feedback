@@ -14,7 +14,6 @@ export const IndexPage = props => {
 
     return (
         <>
-            <div className="background"></div>
             <Header />
             <div className="container">
                 <div className="index">

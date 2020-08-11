@@ -1,5 +1,5 @@
 import React from 'react'
-import styles from './Option.module.css'
+import styles from './MultipleOption.module.css'
 import classNames from 'classnames'
 
 export const MultipleOption = props => {
@@ -11,19 +11,36 @@ export const MultipleOption = props => {
     const optionSelected = () => {
         props.handleClick(props.option.id)
     }
-    
+
     return (
-        <div
-            className={classNames({
-                [styles.answer]: isAnswer,
-                [styles.option]: true
-            })}
-            onClick={optionSelected}>
-            <div className={
-                classNames({
-                    [styles.verticalbar]: isAnswer
-                })}></div>
+        <label>
+            <input 
+                type="checkbox" 
+                className="checkbox" 
+                checked={isAnswer} 
+                onChange={optionSelected}/>
+            <span></span>
             {props.option.option}
-        </div>
+        </label>
     )
+    
+    // return (
+    //     <div
+    //         className={classNames({
+    //             [styles.answer]: isAnswer,
+    //             [styles.multipleoption]: true
+    //         })}
+    //         onClick={optionSelected}
+    //         >
+        
+    //         <div className={
+    //             classNames({
+    //                 [styles.verticalbar]: isAnswer
+    //             })}>
+    //         </div>
+    //         <checkbox  />
+            
+    //         {props.option.option}
+    //     </div>
+    // )
 }

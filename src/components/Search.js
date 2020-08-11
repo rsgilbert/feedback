@@ -13,11 +13,14 @@ export const Search = props => {
     
     return (
         <div className={styles.search}>
-            <input 
-                placeholder="Search" 
-                onChange={onSearchChanged}
-                value={search}
-                autoFocus/>
+            <div className={styles.input}>
+                <input 
+                    placeholder="Search" 
+                    onChange={onSearchChanged}
+                    value={search}
+                    />
+            </div>
+            
             <button>Search</button>
         </div>
     )
