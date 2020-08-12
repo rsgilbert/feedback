@@ -52,12 +52,15 @@ const q2Slice = createSlice({
         answerIdUpdated(state, action) {
             const { answerId } = action.payload
             state.answerId = answerId
+        },
+        q2answerCleared(state) {
+            state.answerId = null
         }
     }
 })
 
 
-export const { answerIdUpdated } = q2Slice.actions
+export const { answerIdUpdated, q2answerCleared } = q2Slice.actions
  
 export default q2Slice.reducer
 
@@ -66,3 +69,13 @@ export const selectQuestion = state => state.q2.question
 export const selectAllOptions = state => state.q2.options
 
 export const selectAnswerId = state => state.q2.answerId
+
+export const selectq2QA = state => {
+    return {
+        q: state.q2.id,
+        a: state.q2.answerId
+    }
+}
+
+
+

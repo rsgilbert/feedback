@@ -46,19 +46,20 @@ const q3Slice = createSlice({
                 }   
             } else {
                 state.answers = state.answers.filter(ans => ans.answerId !== "5")
-                console.log(state.answers)
                 if(reason && reason.trim()) {
                     reason = reason.trim()
                     state.answers.push({ answerId, reason })
                 }
             }
-                 
+        },
+        q3answersCleared(state) {
+            state.answers = []
         }
     }
 })
 
 
-export const { answersUpdated } = q3Slice.actions
+export const { answersUpdated, q3answersCleared } = q3Slice.actions
  
 export default q3Slice.reducer
 
@@ -67,3 +68,10 @@ export const selectQuestion = state => state.q3.question
 export const selectAllOptions = state => state.q3.options
 
 export const selectAnswers = state => state.q3.answers
+
+export const selectq3QA = state => {
+    return {
+        q: state.q3.id,
+        a: state.q3.answers
+    }
+}

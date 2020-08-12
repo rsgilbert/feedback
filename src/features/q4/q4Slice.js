@@ -32,12 +32,15 @@ const q4Slice = createSlice({
         answerIdUpdated(state, action) {
             const { answerId } = action.payload
             state.answerId = answerId
+        },
+        q4answerCleared(state) {
+            state.answerId = null
         }
     }
 })
 
 
-export const { answerIdUpdated } = q4Slice.actions
+export const { answerIdUpdated, q4answerCleared } = q4Slice.actions
  
 export default q4Slice.reducer
 
@@ -46,3 +49,10 @@ export const selectQuestion = state => state.q4.question
 export const selectAllOptions = state => state.q4.options
 
 export const selectAnswerId = state => state.q4.answerId
+
+export const selectq4QA = state => {
+    return {
+        q: state.q4.id,
+        a: state.q4.answerId
+    }
+}
