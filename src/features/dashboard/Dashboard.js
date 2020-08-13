@@ -15,18 +15,33 @@ function randomDataset(count) {
 export const Dashboard = props => {
     const dataset = randomDataset(5)
 
-    d3.select("div")
-        .selectAll("p")
+    const svg = d3.select("div").append("svg")
+    const w = 500
+    const h = 100
+    svg.attr("width", w)
+        .attr("height", h)
+
+    const circles = svg.selectAll('circle')
         .data(dataset)
         .enter()
-        .append("div")
-        .text(d => d)
-        .attr("class", "bar")
-        .style("height", d => d * 5 + "px")
-    
+        .append('circle')
+        .attr("fill", "yellow")
+        .attr("stroke", "orange")
+        .attr("stroke-width", d => d / 2)
+
+
+    circles.attr("cx", (d, i) => {
+        return (i * 50) + 25
+    })
+        .attr("cy", h / 2)
+        .attr("r", d => d)
+
+
     return (
         <>
-            <h1>Dashboard</h1>
+            <p>
+                {/* Dashboard</p> */}
+            </p>
         </>
     )
 }
