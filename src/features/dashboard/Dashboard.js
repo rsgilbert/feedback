@@ -1,20 +1,28 @@
 import React from 'react'
 import * as d3 from 'd3'
+import './Dashboard.css'
 
+
+function randomDataset(count) {
+    const dataset = []
+    for(let i = 0; i < count; i++) {
+        dataset.push(Math.floor(Math.random() * 31))
+    }
+    console.log(dataset)
+    return dataset
+}
 
 export const Dashboard = props => {
-    const dataset = [ 15, 10, 15, 20, 25, 16 ]
+    const dataset = randomDataset(5)
 
     d3.select("div")
         .selectAll("p")
         .data(dataset)
         .enter()
-        .append("p")
+        .append("div")
         .text(d => d)
-        .style("color", d => {
-            if(d > 15) return "darkred"
-            return "blue"
-        })
+        .attr("class", "bar")
+        .style("height", d => d * 5 + "px")
     
     return (
         <>
