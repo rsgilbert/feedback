@@ -11,6 +11,7 @@ import { Q4 } from './features/q4/Q4';
 import { Q5 } from './features/q5/Q5';
 import { Q6 } from './features/q6/Q6';
 import { Footer } from './components/Footer'
+import { Dashboard } from './features/dashboard/Dashboard';
 
 
 
@@ -27,10 +28,12 @@ function App() {
             <Route exact path="/4" component={Q4} />
             <Route exact path="/5" component={Q5} />
             <Route exact path="/6" component={Q6} />
+            <Route exact path="/dashboard" component={Dashboard} />
+            <Route exact path="/d" component={Dashboard} />
             <Redirect to="/" />
           </Switch>
         </main>
-        <Footer/>
+        {/* <Footer/> */}
       </Router>
     </div>
   );

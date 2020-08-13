@@ -3,11 +3,9 @@ import { Header } from '../../components/Header'
 import { useSelector, useDispatch } from 'react-redux'
 import { selectQuestion, selectAllOptions, selectAnswerId, answerIdUpdated } from './q5Slice'
 import { Question } from '../../components/Question'
-import { Search } from '../../components/Search'
 import { Option } from '../../components/Option'
 import { NextButton } from '../../components/NextButton'
-import { selectSearch, searchCleared } from '../search/searchSlice'
-import { useHistory } from 'react-router-dom'
+import { selectSearch } from '../search/searchSlice'
 import { PreviousButton } from '../../components/PreviousButton'
 
 
