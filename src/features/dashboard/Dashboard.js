@@ -21,23 +21,23 @@ export const Dashboard = props => {
     
     var dates = [
         {
-            timestamp: 1597410599034,
+            timestamp: 1599410699034,
             sales: 100
         },
         {
-            timestamp: 1597410591034,
+            timestamp: 1594411591034,
             sales: 500
         },
         {
-            timestamp: 1597410539034,
+            timestamp: 1591415539034,
             sales: 450
         },
         {
-            timestamp: 1597410559034,
+            timestamp: 1596400559034,
             sales: 200
         },
         {
-            timestamp: 1597410509034,
+            timestamp: 1595403509034,
             sales: 105
         },
     ]
@@ -65,6 +65,11 @@ export const Dashboard = props => {
     const salesScale = d3.scaleLinear()
         .domain([0, d3.max(dateDataset, d => d.sales)])
         .range([padding, h - padding])
+
+
+    var xAxis = d3.axisBottom()
+    xAxis.scale(tScale)
+
 
     // const xScale = d3.scaleLinear()
     //     .domain([0, d3.max(dataset, d => d[0])])
@@ -108,11 +113,11 @@ export const Dashboard = props => {
     svg.selectAll("circle")
         .data(dateDataset)
         .enter()
-        .append("circle")
-        .attr("cx", d => tScale(d.date))
-        .attr("cy", d => salesScale(d.sales))
-        .attr("r", 5)
-        .attr("fill", "gold")
+        .append("rect")
+        .attr("x", d => tScale(d.date))
+        .attr("y", d => salesScale(d.sales))
+        .attr("h", 72)
+        .attr("fill", "maroon")
 
     svg.selectAll("text")
         .data(dateDataset)
