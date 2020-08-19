@@ -5,3 +5,16 @@ div.bar {
     background-color: teal;
     margin-right: 2px;
 }
+
+.axis path,
+.axis line {
+    stroke: blue;
+    shape-rendering: crispEdges;
+}
+
+.axis text {
+    font-family: Optima, Futura, sans-serif;
+    font-weight: bold;
+    font-size: 12px;
+    fill: rgb(3, 86, 114)
+}

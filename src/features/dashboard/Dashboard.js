@@ -1,6 +1,8 @@
 import React from 'react'
 import * as d3 from 'd3'
 import './Dashboard.css'
+import { tsv } from 'd3'
+import { Column } from '../chart/Column'
 
 
 function randomDataset(count) {
@@ -52,7 +54,7 @@ export const Dashboard = props => {
     const svg = d3.select("div").append("svg")
     const w = 500
     const h = 200
-    const padding = 20
+    const padding = 50
 
     const tScale = d3.scaleTime()
         .domain([
@@ -66,58 +68,18 @@ export const Dashboard = props => {
         .domain([0, d3.max(dateDataset, d => d.sales)])
         .range([padding, h - padding])
 
-
-    var xAxis = d3.axisBottom()
-    xAxis.scale(tScale)
-
-
-    // const xScale = d3.scaleLinear()
-    //     .domain([0, d3.max(dataset, d => d[0])])
-    //     .range([padding, w - padding])
-  
-
-    // const yScale = d3.scaleLinear()
-    //     .domain([0, d3.max(dataset, d => d[1])])
-    //     .range([h + padding, padding])
-
-    // const areaScale = d3.scaleSqrt()
-    //     .domain([0, d3.max(dataset, d=> d[1])])
-    //     .range([5, 15])
-    
-
-
+   
     svg.attr("width", w + 100)
         .attr("height", h + 100)
 
-    // svg.selectAll("circle")
-    //     .data(dataset)
-    //     .enter()
-    //     .append("circle")
-    //     .attr("cx", d => xScale(d[0]))
-    //     .attr("cy", d => yScale(d[1]))
-    //     .attr("r", 5)
-    //     .attr("r", d => areaScale(d[1]))
-    //     // .attr("r", d => Math.sqrt(( 5 * d[1])))
-    //     .attr("fill", "red")
-
-    // svg.selectAll("text")
-    //     .data(dataset)
-    //     .enter()
-    //     .append("text")
-    //     .text(d => "(" + d[0] + ", " + d[1] + ")")
-    //     .attr("x", d => xScale(d[0]))
-    //     .attr("y", d => yScale(d[1]))
-    //     .attr("font-size", 14)
-
-    /* set scale for dates */
     svg.selectAll("circle")
         .data(dateDataset)
         .enter()
-        .append("rect")
-        .attr("x", d => tScale(d.date))
-        .attr("y", d => salesScale(d.sales))
-        .attr("h", 72)
-        .attr("fill", "maroon")
+        .append("circle")
+        .attr("cx", d => tScale(d.date))
+        .attr("cy", d => salesScale(d.sales))
+        .attr("r", 7)
+        .attr("fill", "red")
 
     svg.selectAll("text")
         .data(dateDataset)
@@ -126,8 +88,35 @@ export const Dashboard = props => {
         .text(d => d.sales + ", " + formatTime(d.date))
         .attr("x", d => tScale(d.date))
         .attr("y", d => salesScale(d.sales))
+
+       
+    const xAxis = d3.axisBottom()
+        .scale(tScale)
+        .ticks(5)
+       
+    svg.append("g")
+        .attr("class", "axis")
+        .attr("transform", `translate(0,${h - padding})`)
+        .call(xAxis)
+
+
+    const yAxis = d3.axisLeft()
+        .scale(salesScale)
+        .ticks(5)
+
+    svg.append("g")
+        .attr("class", "axis")
+        .attr("transform", `translate(${padding},0)`)
+        .call(yAxis)
+
+    const format = d3.format(".0%")
+    console.log(format(123.22))
+    console.log(format(0.2364))
+
+
     return (
         <>
+            <Column />
             <p>
                 {/* Dashboard</p> */}
             </p>
