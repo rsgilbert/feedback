@@ -11,7 +11,7 @@ export const Column = props => {
         ["j3", 7]
     ]
     const w = 500
-    const h = 100
+    const h = 200
     const xPadding = 40
     const yPadding = 40
 

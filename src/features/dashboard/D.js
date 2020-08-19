@@ -2,6 +2,8 @@ import React from 'react'
 import * as d3 from 'd3'
 import './Dashboard.css'
 import { Column } from '../chart/Column';
+import { Line } from '../chart/Line';
+import { LineChart } from '../chart/LineChart';
 
 export const D = props => {
     var dataset = [
@@ -14,7 +16,9 @@ export const D = props => {
 
     return (
         <div className="chart" id="ch">
-            <Column />
+            {/* <Column /> */}
+            {/* <Line /> */}
+            <LineChart />
         </div>
     )
 }
