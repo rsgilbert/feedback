@@ -5,10 +5,10 @@ import './Column.css'
 
 export const Column = props => {
     const dataset = [
-        ["0", 1],
-        ["1", 10],
-        ["2", 5],
-        ["3", 7]
+        ["0k", 1],
+        ["1j", 10],
+        ["g2", 5],
+        ["j3", 7]
     ]
     const w = 500
     const h = 100
@@ -21,10 +21,12 @@ export const Column = props => {
         .attr("width", w + xPadding)
         .attr("height", h + 2 * yPadding)
 
+    const xDomain = dataset.map(d => d[0])
 
-    const xScale = d3.scaleLinear()
-        .domain([0, dataset.length])
-        .range([0, w])
+    const xScale = d3.scaleBand()
+        .domain(xDomain)
+        .rangeRound([0, w])
+        .paddingInner(.05)
 
     const yScale = d3.scaleLinear()
         .domain([0, d3.max(dataset, d => d[1])])
@@ -36,9 +38,9 @@ export const Column = props => {
         .data(dataset)
         .enter()
         .append("rect")
-        .attr("x", (d, i) => i * ( w / dataset.length) + xPadding)
+        .attr("x", d => xScale(d[0]) + xPadding)
         .attr("y", d => h + yPadding - yScale(d[1]))
-        .attr("width", w / dataset.length - xPadding)
+        .attr("width", xScale.bandwidth())
         .attr("height", d => yScale(d[1]))
 
 
