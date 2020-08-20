@@ -4,6 +4,7 @@ import './Dashboard.css'
 import { Column } from '../chart/Column';
 import { Line } from '../chart/Line';
 import { LineChart } from '../chart/LineChart';
+import { PieChart } from '../chart/PieChart';
 
 export const D = props => {
     var dataset = [
@@ -18,7 +19,8 @@ export const D = props => {
         <div className="chart" id="ch">
             {/* <Column /> */}
             {/* <Line /> */}
-            <LineChart />
+            {/* <LineChart /> */}
+            <PieChart />
         </div>
     )
 }
