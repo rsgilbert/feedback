@@ -35,7 +35,7 @@ function App() {
             <Redirect to="/" />
           </Switch>
         </main>
-        {/* <Footer/> */}
+        <Footer/>
       </Router>
     </div>
   );

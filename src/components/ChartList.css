@@ -1,0 +1,19 @@
+.chartlist {
+    display: grid;
+    grid-auto-rows: 20em;
+    grid-template-columns: 1fr;
+    grid-gap: 1em;    
+
+}
+
+@media(min-width: 35em) {
+    .chartlist {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+.chartlist > div {
+    background-color: #ccc;
+    border-radius: .3em;
+    
+}

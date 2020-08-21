@@ -1,4 +1,7 @@
 // import * as firebase from "firebase/app"
+import React from 'react'
+import { Q1BarChart } from './features/chart/Q1BarChart';
+
 
 export function getQuestionNumber() {
     const pathname = window.location.pathname
@@ -21,4 +24,26 @@ export function initializeFirebase() {
     // if(!firebase.apps.length) {
     //     firebase.initializeApp(firebaseConfig);
     // }
+}
+
+
+export function randomDataset(count) {
+    const dataset = []
+    for (let i = 0; i < count; i++) {
+        dataset.push(Math.floor(Math.random() * 31))
+    }
+    console.log(dataset)
+    return dataset
+}
+
+export function getAllChartIds() {
+    return {
+        q1BarChart: 0,
+    }
+}
+
+export function getChart(chartId) {
+    switch(chartId) {
+        case getAllChartIds().q1BarChart: return <Q1BarChart />
+    }
 }

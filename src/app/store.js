@@ -8,7 +8,7 @@ import otherReducer from '../features/other/otherSlice'
 import q4Reducer from '../features/q4/q4Slice'
 import q5Reducer from '../features/q5/q5Slice'
 import q6Reducer from '../features/q6/q6Slice'
-
+import dashboardReducer from '../features/dashboard/dashboardSlice'
 
 
 export default configureStore({
@@ -22,5 +22,6 @@ export default configureStore({
     q4: q4Reducer,
     q5: q5Reducer,
     q6: q6Reducer,
+    dashboard: dashboardReducer,
   },
 });

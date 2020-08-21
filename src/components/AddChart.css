@@ -1,0 +1,88 @@
+.addchart {
+    background-color: #ccc;
+    text-align: center;
+    cursor: pointer;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.addchart:hover {
+    background-color: rgb(179, 177, 177);
+    border: 5px solid rgb(172, 171, 171);
+}
+
+.add-sign {
+    font-size: 10em;
+    color: dimgrey;
+    margin: 0;
+    padding: 0;
+    justify-self: center;
+}
+
+.add-message {
+    color: rgb(61, 61, 61);
+    position: absolute;
+    bottom: 1em;
+}
+
+.add-modal {
+    position: fixed;
+    background-color: rgba(0, 0, 0, .5);
+    z-index: 2;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.dialogbox {
+    background-color: white;
+    width: 90%;
+    margin: auto;
+    border-radius: .5em;
+    padding: 1em;
+    margin-top: 5em;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    max-width: 800px;
+}
+
+
+.close {
+    cursor: pointer;
+    position: absolute;
+    top: 0em;
+    right: 1em;
+    height: 2em;
+    width: 2em;
+    border: 0;
+    color: white;
+    border-radius: .5em;
+    font-weight: bolder;
+    background-image: linear-gradient(to bottom, rgb(212, 149, 152), rgb(161, 68, 84));
+    box-shadow: .1em .1em .4em rgb(121, 71, 73);
+    
+}
+
+.dialogbox > h1 {
+    margin: .25em 0 .85em;
+    font-size: 1.25em;
+}
+
+.notdisplayed {
+    display: none;
+}
+
+
+.chartoption {
+    border: 1px solid grey;
+    margin: 0;
+    margin-top: -1px;
+}
+
+.chartoption:hover {
+    font-weight: bold;
+}

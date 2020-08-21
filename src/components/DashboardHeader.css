@@ -1,0 +1,40 @@
+.dashboard-h1 {
+    text-transform: uppercase;
+    text-align: center;
+    color: white;
+    font-size: 1.5em;
+    margin: 0;
+    padding: .8em 0 .5em;
+    background-color: var(--theme-color);
+
+}
+
+.dashboard-ul {
+    display: flex;
+    list-style: none;
+    justify-content: center;
+    position: sticky;
+    top: 0em;
+    margin: 0;
+    padding: 1em;
+    background-color: var(--theme-color);
+    z-index: 1;
+}
+
+.dashboard-ul > li {
+    margin: 0 .25em;
+
+}
+
+.dashboard-ul > li > a {
+    text-decoration: none;
+    padding: .5em 1em;
+    background-color: rgb(125, 139, 41);
+    margin: 0 0;
+    color: white;
+    border-radius: .3em;
+}
+
+.dashboard-ul > li > a:hover {
+    background-color: rgb(62, 70, 21);
+}
