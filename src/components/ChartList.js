@@ -3,17 +3,17 @@ import './ChartList.css'
 import { Chart } from './Chart'
 import { AddChart } from './AddChart'
 
-export const ChartList = props => {
+export const ChartList = ({ shownCharts, notShownCharts }) => {
 
-    const renderCharts = props.chartIds.map(chartId => 
-        <Chart chartId={chartId} key={chartId}/>    
+    const renderCharts = shownCharts.map(chart => 
+        <Chart chart={chart} key={chart.id}/>    
     )
 
 
     return (
         <div className="chartlist">
             { renderCharts }
-            <AddChart />
+            <AddChart notShownCharts={notShownCharts}/>
         </div>
     )
 }

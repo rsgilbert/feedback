@@ -1,10 +1,8 @@
 import React from 'react'
 import './Chart.css'
-import { getChart } from '../utils'
 
-
-export const Chart = ({ chartId }) => {
-    const renderChart = getChart(chartId)
+export const Chart = ({ chart }) => {
+    const renderChart = chart.getComponent()
 
     return (
         <>

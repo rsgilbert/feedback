@@ -22,7 +22,7 @@
 }
 
 
-.close {
+/* .close {
     cursor: pointer;
     position: absolute;
     top: 0em;
@@ -36,6 +36,26 @@
     background-image: linear-gradient(to bottom, rgb(212, 149, 152), rgb(161, 68, 84));
     box-shadow: .1em .1em .4em rgb(121, 71, 73);
     
+} */
+
+.close {
+    cursor: pointer;
+    position: absolute;
+    top: 0em;
+    right: 1em;
+    height: 2em;
+    width: 2em;
+    border: 0;
+    /* color: rgb(49, 49, 49); */
+    color: rgb(117, 87, 87);
+    font-size: 1em;
+    border-radius: .5em;
+    /* background-image: linear-gradient(to bottom, rgb(212, 149, 152), rgb(161, 68, 84)); */
+    /* box-shadow: .1em .1em .4em rgb(121, 71, 73); */
+    
+}
+.close:hover {
+    background-color: rgb(228, 227, 227);
 }
 
 .dialogbox > h1 {

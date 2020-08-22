@@ -36,14 +36,38 @@ export function randomDataset(count) {
     return dataset
 }
 
-export function getAllChartIds() {
-    return {
-        q1BarChart: 0,
-    }
+export function getCharts() {
+    return [
+        {
+            id: 10,
+            name: "Bar chart",
+            questionId: "1",
+            isShown: true,
+            getComponent: () => <Q1BarChart />
+        },
+        {
+            id: 11,
+            name: "Pie chart",
+            questionId: "1",
+            isShown: false,
+            getComponent: () => <Q1BarChart />
+        },
+        
+    ]
 }
 
-export function getChart(chartId) {
-    switch(chartId) {
-        case getAllChartIds().q1BarChart: return <Q1BarChart />
-    }
-}
+// export function getAllChartIds() {
+//     return {
+//         q1BarChart: 10,
+//         q1PieChart: 11,
+//         q1LineGraph: 12,
+//         q1AreaChart: 13,
+//         q1ColumnChart: 14
+//     }
+// }
+
+// export function getChart(chartId) {
+//     switch(chartId) {
+//         case getAllChartIds().q1BarChart: return <Q1BarChart />
+//     }
+// }
