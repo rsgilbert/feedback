@@ -1,6 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit'
 import React from 'react'
 import { Q1BarChart } from '../chart/Q1BarChart'
+import { Q1PieChart } from '../chart/Q1PieChart'
 
 const initialState = {
     charts: [
@@ -15,8 +16,8 @@ const initialState = {
             id: 11,
             name: "Pie chart",
             questionId: "1",
-            isShown: false,
-            getComponent: () => <Q1BarChart />
+            isShown: true,
+            getComponent: () => <Q1PieChart />
         }, 
     ],
     q1: {

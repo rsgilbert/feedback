@@ -1,46 +1,59 @@
-import React from 'react'
+import React, { useEffect, useRef } from 'react'
 import * as d3 from 'd3'
 
 
-export const PieChart = props => {
-    const dataset = [5, 10, 20, 45, 6, 25]
-    const pie = d3.pie()
+export const PieChart = ({ data }) => {
     const colors = d3.scaleOrdinal(d3.schemeCategory10)
+    const parentEl = useRef(null)
+    const pie = d3.pie()
 
-    const w = 300
-    const h = 300
-    const outerRadius = w / 2
-    const innerRadius = 0
+    const xData = data.map(d => d.x)
+    /* The useEffect Hook is for running side effects outside of React,
+       for instance inserting elements into the DOM using D3 */
+    useEffect(() => {
+        const parentDiv = document.querySelector("#q1PieChartDiv")
+        const margin = { top: 20, right: 20, bottom: 80, left:80 }
+        const width = parentDiv.clientWidth - margin.left - margin.right
+        const height = parentDiv.clientHeight - margin.top - margin.bottom
 
-    const arc = d3.arc()
-        .innerRadius(innerRadius)
-        .outerRadius(outerRadius)
-
-
-    const svg = d3.select("#root")
-        .append("svg")
-        .attr("width", w)
-        .attr("height", h)
+        // if(data && parentEl.current){
+            const svg = d3.select(parentEl.current)
+                .append("svg")
+                .attr("width", width + margin.left + margin.right)
+                .attr("height", height + margin.top + margin.bottom)
+                .append("g")
+                .attr("transform", `translate(${margin.left}, ${margin.top})`)
     
-    const arcs = svg.selectAll("g.arc")
-        .data(pie(dataset))
-        .enter()
-        .append("g")
-        .attr("class", "arc")
-        .attr("transform", `translate(${outerRadius}, ${outerRadius})`)
+            const outerRadius = height / 2
+            const innerRadius = 0
 
-    arcs.append("path")
-        .attr("fill", (d, i) => colors(i))
-        .attr("d", arc)
+            const arc = d3.arc()
+                .innerRadius(innerRadius)
+                .outerRadius(outerRadius)
 
-    console.log(`KK${arc.centroid(.2)}`)
-    arcs.append("text")
-        .attr("transform", d => `translate(${arc.centroid(d)})`)
-        .attr("text-anchor", "middle")
-        .text(d => d.value)
-        .style("fill", "white")
+            
+            const arcs = svg.selectAll("g.arc")
+                .data(pie(xData))
+                .enter()
+                .append("g")
+                .attr("class", "arc")
+                .attr("transform", `translate(${outerRadius}, ${outerRadius})`)
+
+            arcs.append("path")
+                .attr("fill", (d, i) => colors(i))
+                .attr("d", arc)
+
+            arcs.append("text")
+                .attr("transform", d => `translate(${arc.centroid(d)})`)
+                .attr("text-anchor", "middle")
+                .text(d => d.value)
+                .style("fill", "white")
+        // }
+    }, [data, parentEl.current])
 
     return (
-        <></>
+        <div ref={parentEl} 
+            id="q1PieChartDiv">
+        </div>       
     )
 }

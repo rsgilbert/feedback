@@ -70,7 +70,6 @@ export const BarChart = ({ data }) => {
     return (
         <div ref={parentEl} 
             className="parentDiv">
-        </div>
-            
+        </div>       
     )
 }
