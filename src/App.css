@@ -1,8 +1,8 @@
 :root {
   font-size: calc(.6em + 1vw);
   box-sizing: border-box;
-  --theme-color: #a8b628;
-  --theme-color--dark: #7d881e;
+  --theme-color-light: rgba(206, 155, 2, 0.904);
+  --theme-color: rgba(170, 128, 3, 0.904);
 }
 
 @media(min-width: 50em) {

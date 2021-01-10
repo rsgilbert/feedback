@@ -12,7 +12,6 @@ import { Q3 } from './features/q3/Q3';
 import { Q4 } from './features/q4/Q4';
 import { Q5 } from './features/q5/Q5';
 import { Q6 } from './features/q6/Q6';
-import { Footer } from './components/Footer'
 import { Dashboard } from './features/dashboard/Dashboard';
 import { D } from './features/dashboard/D';
 
@@ -35,7 +34,6 @@ function App() {
             <Redirect to="/" />
           </Switch>
         </main>
-        <Footer/>
       </Router>
     </div>
   );

@@ -8,7 +8,7 @@ export const IndexPage = props => {
     const history = useHistory()
 
     const goToPage1 = () => {
-        history.push("/1")
+        // history.push("/1")
     }
     
 
