@@ -3,7 +3,6 @@ import { Header } from '../../components/Header'
 import './IndexPage.css'
 import { MyButton } from '../../components/MyButton'
 import { useHistory } from 'react-router-dom'
-import { EHistory, eHitory } from '../../components/Ehistory'
 
 export const IndexPage = props => {
     const history = useHistory()
@@ -21,7 +20,6 @@ export const IndexPage = props => {
                     <h1>
                         Welcome!
                     </h1>
-                    <EHistory />
                     <p>
                         Thank you for taking time to fill in our feedback form.
                     </p>
