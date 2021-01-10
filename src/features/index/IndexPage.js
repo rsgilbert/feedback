@@ -8,7 +8,7 @@ export const IndexPage = props => {
     const history = useHistory()
 
     const goToPage1 = () => {
-        // history.push("/1")
+        history.push("/1")
     }
     
 
@@ -24,7 +24,6 @@ export const IndexPage = props => {
                         Thank you for taking time to fill in our feedback form.
                     </p>
                     <MyButton title="Begin" handleClick={ goToPage1 } />
-
                 </div>
             </div>
         </>
