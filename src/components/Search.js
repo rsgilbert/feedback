@@ -12,7 +12,11 @@ export const Search = props => {
         dispatch(searchUpdated({ search: e.target.value }))
     
     return (
-        <div className="search">
+        <div className="searchbox">
+            <div className="search-icon">
+                <img src="/loupe.svg"
+                    />
+            </div>   
             <div className="search-input">
                 <input 
                     placeholder="Search"
@@ -20,11 +24,7 @@ export const Search = props => {
                     value={search}/>
             </div>          
 
-            <div className="search-image">
-                <img
-                    src="/search.png"
-                    />
-            </div>            
+                     
         </div>
             
     )
