@@ -7,6 +7,7 @@ import { Option } from '../../components/Option'
 import { NextButton } from '../../components/NextButton'
 import { selectSearch } from '../search/searchSlice'
 import { PreviousButton } from '../../components/PreviousButton'
+import { Actions } from '../../components/Actions'
 
 
 export const Q5 = props => {
@@ -30,13 +31,11 @@ export const Q5 = props => {
     
     return (
         <div>
-            <Header />
             <div className="container">
                 <Question question={question} />
                 { optionsContent }
             </div>
-            <PreviousButton />
-            <NextButton />
+            <Actions />
         </div>
     )
 }

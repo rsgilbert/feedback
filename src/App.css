@@ -2,7 +2,7 @@
   font-size: calc(.6em + 1vw);
   box-sizing: border-box;
   --theme-color-light: rgba(206, 155, 2, 0.904);
-  --theme-color: rgba(170, 128, 3, 0.904);
+  --theme-color: #aa8003e7;
 }
 
 @media(min-width: 50em) {

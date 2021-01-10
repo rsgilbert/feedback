@@ -1,6 +1,7 @@
-.nextbutton {
+.previousbutton {
     position: fixed;
     z-index: 1;
     bottom: 1em;
-    right: 2em;
+    left: 2em;
 }
+

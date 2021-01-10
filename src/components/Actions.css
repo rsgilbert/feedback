@@ -1,0 +1,14 @@
+.actions {
+    position: fixed;
+    bottom: 0;
+    width: 100vw !important;
+    background-color: #ececec;
+}
+
+.actions-inner {
+    max-width: 680px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}

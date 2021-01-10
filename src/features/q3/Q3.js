@@ -10,6 +10,7 @@ import { PreviousButton } from '../../components/PreviousButton'
 import { NextButton } from '../../components/NextButton'
 import { OtherModal } from '../../components/OtherModal'
 import { modalOpened } from '../other/otherSlice'
+import { Actions } from '../../components/Actions'
 
 
 export const Q3 = props => {
@@ -48,15 +49,12 @@ export const Q3 = props => {
 
     return (
         <div>
-            <Header />
             <div className="container">
                 <Question question={question} />
                 { optionsContent }
             </div>
             <OtherModal />
-            <PreviousButton handleClick={goToPage2} />
-            <NextButton handleClick={goToPage4} />
-        
+            <Actions />
         </div>
     )
 }

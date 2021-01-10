@@ -4,6 +4,7 @@
     align-items: center;
     border: 1.25px solid var(--theme-color);
     border-radius: 3em;
+    margin-bottom: 1.5em;
 }
 
 .search-input {

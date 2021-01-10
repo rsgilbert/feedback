@@ -14,7 +14,6 @@ export const IndexPage = props => {
 
     return (
         <>
-            <Header />
             <div className="container">
                 <div className="index">
                     <h1>

@@ -1,10 +1,10 @@
 import React from 'react'
-import styles from './PreviousButton.module.css'
+import './PreviousButton.css'
 import { useHistory } from 'react-router-dom'
 import { getQuestionNumber } from '../utils'
 import { useDispatch } from 'react-redux'
 import { searchCleared } from '../features/search/searchSlice'
-
+import './MyButton.css'
 
 
 export const PreviousButton = props => {
@@ -19,7 +19,7 @@ export const PreviousButton = props => {
 
     return (
         <button 
-            className={styles.previousbutton}
+            className="my-button"
             onClick={handleClick}>
             Back
         </button>

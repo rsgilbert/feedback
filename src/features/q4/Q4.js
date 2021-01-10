@@ -9,6 +9,7 @@ import { NextButton } from '../../components/NextButton'
 import { selectSearch, searchCleared } from '../search/searchSlice'
 import { useHistory } from 'react-router-dom'
 import { PreviousButton } from '../../components/PreviousButton'
+import { Actions } from '../../components/Actions'
 
 
 export const Q4 = props => {
@@ -34,13 +35,11 @@ export const Q4 = props => {
     
     return (
         <div>
-            <Header />
             <div className="container">
                 <Question question={question} />
                 { optionsContent }
             </div>
-            <PreviousButton />
-            <NextButton />
+            <Actions />
         </div>
     )
 }

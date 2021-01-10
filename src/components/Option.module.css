@@ -1,20 +1,30 @@
 .option {
-    border: 1px solid var(--theme-color);
     border-radius: .25em;
-    margin-top: 1em;
-    font-weight: bold;
     cursor: pointer;
     display: flex;
     align-items: center;
 }
 
-.verticalbar {
-    padding: 1.5em .4em;
+.option:not(:first-of-type) {
+    margin-top: 1.5em;
+}
+.dot {
+    padding: .4em;
     border-radius: .25em 0 0 .25em;
     margin: -1px .5em -1px -1px;
     display: inline;
 }
+.dot {
+    height: 1.5em;
+    width: 1.5em;
+    background-color: #ccc;
+    border-radius: 50%;
+    display: inline-block;
+  }
 
+h1 + .dot {
+    margin: 0;
+}
 .colored {
     background-color: var(--theme-color);
 }

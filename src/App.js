@@ -14,13 +14,14 @@ import { Q5 } from './features/q5/Q5';
 import { Q6 } from './features/q6/Q6';
 import { Dashboard } from './features/dashboard/Dashboard';
 import { D } from './features/dashboard/D';
-
+import { Header } from './components/Header'
 
 function App() {
   return (
     <div className="app">
       <Router>
         <main className="main">
+        <Header />
           <Switch>
             <Route exact path="/" component={IndexPage} />
             <Route exact path="/1" component={Q1} />

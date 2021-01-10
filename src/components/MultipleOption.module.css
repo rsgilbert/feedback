@@ -4,11 +4,9 @@
 
 label {
     display: flex;
-    border: 1px solid var(--theme-color);
     padding: 1em;
     border-radius: .25em;
     margin-top: 1em;
-    font-weight: bold;
     cursor: pointer;
     align-items: center;
 }
@@ -20,13 +18,15 @@ label input {
 label span {
     height: 1.5em;
     width: 1.5em;
-    border: 1px solid grey;
+    border: 1px solid var(--theme-color);
     display:flex;
     margin-right: 1em;
     justify-content: center;
+    border-radius: 2px;
     align-items: center;
 }
 
 [type=checkbox]:checked + span:before {
     content: '\2714';
+    color: var(--theme-color);
 }

@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
-import  './NextButton.css'
+import Swal from 'sweetalert2'
+import  './MyButton.css'
 import { useHistory } from 'react-router-dom'
 import './FinishButton.css'
 import { MyButton } from './MyButton'
@@ -50,7 +51,14 @@ export const FinishButton = props => {
         }
         clearAnswers()
         console.log(feedback)
-        setIsModalOpen(true)
+        Swal.fire({
+            title: 'Thank You!',
+            text: 'Your feedback has been recorded',
+            icon: 'success',
+            confirmButtonColor: '#aa8002'
+
+        })
+        .then(() => goToHome())
     }
 
     const goToHome = () => history.push("/")
@@ -58,23 +66,11 @@ export const FinishButton = props => {
     return (
         <>
             <button 
-                className="nextbutton"
+                className="my-button"
                 onClick={handleClick}>
                 Finish
             </button>
-            <div className={classNames({
-                finishbackground: true,
-                hidemodal: !isModalOpen
-            })}>
-                <div className={classNames({
-                    finishmessage: true
-                })}
-                    >
-                    <h1>Thank you!</h1>
-                    <p>Your feedback has been recorded</p>
-                    <MyButton title="OK" handleClick={goToHome}/>
-                </div>
-            </div>
+           
         </>
     )
 }

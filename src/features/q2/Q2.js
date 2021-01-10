@@ -1,5 +1,4 @@
 import React from 'react'
-import { Header } from '../../components/Header'
 import { useSelector, useDispatch } from 'react-redux'
 import { selectQuestion, selectAllOptions, selectAnswerId, answerIdUpdated } from './q2Slice'
 import { Question } from '../../components/Question'
@@ -8,8 +7,7 @@ import { Option } from '../../components/Option'
 import { NextButton } from '../../components/NextButton'
 import { selectSearch, searchCleared } from '../search/searchSlice'
 import { useHistory } from 'react-router-dom'
-import { PreviousButton } from '../../components/PreviousButton'
-
+import { Actions } from  '../../components/Actions'
 
 export const Q2 = props => {
     const question = useSelector(selectQuestion)
@@ -33,14 +31,14 @@ export const Q2 = props => {
     )
     
     return (
-        <>
-            <Header />
-            <div className="container">
+        <>     
+            <div className="container content">
                 <Question question={question} />
-                { optionsContent }
+                <div className="options" >
+                    { optionsContent }
+                </div>                
             </div>
-            <PreviousButton />
-            <NextButton />
+            <Actions />
         </>
     )
 }

@@ -10,6 +10,7 @@ import { selectSearch, searchCleared } from '../search/searchSlice'
 import { useHistory } from 'react-router-dom'
 import { PreviousButton } from '../../components/PreviousButton'
 import { FinishButton } from '../../components/FinishButton'
+import { Actions } from '../../components/Actions'
 
 
 export const Q6 = props => {
@@ -33,13 +34,11 @@ export const Q6 = props => {
     
     return (
         <div>
-            <Header />
             <div className="container">
                 <Question question={question} />
                 { optionsContent }
             </div>
-            <PreviousButton />
-            <FinishButton />
+            <Actions noNext={true} hasFinish={true}/>
         </div>
     )
 }

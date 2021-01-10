@@ -2,7 +2,6 @@
     padding: 1em;
     background-color: var(--theme-color);
     color: white;
-    position: relative;
 }
 
 .header > h1 {

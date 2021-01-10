@@ -6,8 +6,8 @@ import './Q1.css'
 import { Question } from '../../components/Question'
 import { Search } from '../../components/Search'
 import { Option } from '../../components/Option'
-import { NextButton } from '../../components/NextButton'
 import { selectSearch, searchCleared } from '../search/searchSlice'
+import { Actions } from  '../../components/Actions'
 
 
 
@@ -21,7 +21,10 @@ export const Q1 = props => {
   
     const setAnswerId = answerId => dispatch(answerIdUpdated({ answerId }))
     
-    const options = allOptions.filter(o => o.option.toLowerCase().includes(search.toLowerCase()))
+    let options = []
+    if(search !== "") {
+        options = allOptions.filter(o => o.option.toLowerCase().includes(search.toLowerCase()))
+    }
     const optionsContent = options.map(option => 
         <Option 
             key={option.id} 
@@ -33,13 +36,15 @@ export const Q1 = props => {
     
     return (
         <div>
-            <Header />
             <div className="container">
                 <Question question={question} />
                 <Search />
-                { optionsContent }
+
+                <div className="options" >
+                    { optionsContent }
+                </div>
             </div>
-            <NextButton />
+            <Actions noPrevious={true}/>
         </div>
     )
 }

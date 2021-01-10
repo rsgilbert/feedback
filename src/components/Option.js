@@ -19,7 +19,7 @@ export const Option = props => {
             >
             <div className={
                 classNames({
-                    [styles.verticalbar]: true,
+                    [styles.dot]: true,
                     [styles.colored]: isAnswer
                 })} />
             <div className={styles.data}>

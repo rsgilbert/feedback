@@ -19,12 +19,10 @@ export const NextButton = props => {
     }
 
     return (
-        <div className="container nextcontainer">
-            <button 
-                className="nextbutton"
-                onClick={handleClick}>
-                Next
-            </button>
-        </div>
+        <button 
+            className="my-button"
+            onClick={handleClick}>
+            Next
+        </button>
     )
 }
