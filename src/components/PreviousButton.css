@@ -1,7 +1,6 @@
 .previousbutton {
-    position: fixed;
-    z-index: 1;
-    bottom: 1em;
-    left: 2em;
+    background-color: transparent;
+    color: var(--theme-color);
+    border: 1px solid var(--theme-color);
 }
 

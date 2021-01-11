@@ -19,7 +19,7 @@ export const PreviousButton = props => {
 
     return (
         <button 
-            className="my-button"
+            className="my-button previousbutton"
             onClick={handleClick}>
             Back
         </button>
