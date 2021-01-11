@@ -38,7 +38,7 @@ export const Q2 = props => {
                     { optionsContent }
                 </div>                
             </div>
-            <Actions />
+            <Actions isAnswered={!!answerId}/>
         </>
     )
 }

@@ -17,10 +17,15 @@
 .dot {
     height: 1.5em;
     width: 1.5em;
-    background-color: #ccc;
+    border: 1px solid var(--theme-color);
     border-radius: 50%;
     display: inline-block;
+    outline: none;
   }
+.dot:active {
+    outline: none;
+    
+}
 
 h1 + .dot {
     margin: 0;

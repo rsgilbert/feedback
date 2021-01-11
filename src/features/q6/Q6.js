@@ -38,7 +38,7 @@ export const Q6 = props => {
                 <Question question={question} />
                 { optionsContent }
             </div>
-            <Actions noNext={true} hasFinish={true}/>
+            <Actions noNext={true} hasFinish={true} isAnswered={!!answerId}/>
         </div>
     )
 }

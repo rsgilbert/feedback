@@ -19,8 +19,6 @@ export const Q4 = props => {
     const answerId = useSelector(selectAnswerId)
     const dispatch = useDispatch()
 
-  
-
     const setAnswerId = answerId => dispatch(answerIdUpdated({ answerId }))
     
     const options = allOptions.filter(o => o.option.toLowerCase().includes(search.toLowerCase()))
@@ -39,7 +37,7 @@ export const Q4 = props => {
                 <Question question={question} />
                 { optionsContent }
             </div>
-            <Actions />
+            <Actions isAnswered={!!answerId}/>
         </div>
     )
 }

@@ -1,5 +1,5 @@
 .header {
-    padding: 1em;
+    padding: 1.5em;
     background-color: var(--theme-color);
     color: white;
 }
@@ -12,8 +12,8 @@
 }
 
 .header__logo {
-    width: 2.3em;
+    width: 2.7em;
     position: absolute;
-    top: .5em;
-    left: 1em;
+    top: .85em;
+    left: 1.25em;
 }

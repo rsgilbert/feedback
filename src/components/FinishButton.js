@@ -54,8 +54,7 @@ export const FinishButton = props => {
         Swal.fire({
             title: 'Thank You!',
             text: 'Your feedback has been recorded',
-            icon: 'success',
-            confirmButtonColor: '#aa8002'
+            icon: 'success'
 
         })
         .then(() => goToHome())
@@ -66,6 +65,8 @@ export const FinishButton = props => {
     return (
         <>
             <button 
+            
+                disabled={props.isDisabled}
                 className="my-button"
                 onClick={handleClick}>
                 Finish

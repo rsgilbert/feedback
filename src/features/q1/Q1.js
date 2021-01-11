@@ -20,7 +20,7 @@ export const Q1 = props => {
    
   
     const setAnswerId = answerId => dispatch(answerIdUpdated({ answerId }))
-    
+    console.log(answerId)
     let options = []
     if(search !== "") {
         options = allOptions.filter(o => o.option.toLowerCase().includes(search.toLowerCase()))
@@ -44,7 +44,9 @@ export const Q1 = props => {
                     { optionsContent }
                 </div>
             </div>
-            <Actions noPrevious={true}/>
+            <Actions 
+                isAnswered={answerId !== null}
+                noPrevious={true}/>
         </div>
     )
 }

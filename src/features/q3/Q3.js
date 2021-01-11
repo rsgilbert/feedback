@@ -54,7 +54,7 @@ export const Q3 = props => {
                 { optionsContent }
             </div>
             <OtherModal />
-            <Actions />
+            <Actions isAnswered={answers.length > 0}/>
         </div>
     )
 }

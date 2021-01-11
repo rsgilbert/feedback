@@ -4,7 +4,7 @@ import { useHistory } from 'react-router-dom'
 import { getQuestionNumber } from '../utils'
 import { useDispatch } from 'react-redux'
 import { searchCleared } from '../features/search/searchSlice'
-
+import classNames from 'classnames'
 
 
 export const NextButton = props => {
@@ -21,6 +21,7 @@ export const NextButton = props => {
     return (
         <button 
             className="my-button"
+            disabled={props.isDisabled}
             onClick={handleClick}>
             Next
         </button>
