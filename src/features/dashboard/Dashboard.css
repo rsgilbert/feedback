@@ -1,3 +1,10 @@
+.dashboard {
+    display: grid;
+}
+
+
+
+
 div.bar {
     display: inline-block;
     width: 20px;
@@ -18,3 +25,4 @@ div.bar {
     font-size: 12px;
     fill: rgb(3, 86, 114)
 }
+

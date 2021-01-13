@@ -31,7 +31,7 @@ function App() {
             <Route exact path="/5" component={Q5} />
             <Route exact path="/6" component={Q6} />
             <Route exact path="/dashboard" component={Dashboard} />
-            <Route exact path="/d" component={D} />
+            <Route exact path="/d" component={Dashboard} />
             <Redirect to="/" />
           </Switch>
         </main>

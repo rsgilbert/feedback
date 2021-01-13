@@ -5,3 +5,6 @@
     right: 2em;
 }
 
+button:disabled {
+  background-color: gray;
+}

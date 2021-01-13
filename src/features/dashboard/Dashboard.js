@@ -5,14 +5,16 @@ import { DashboardHeader } from '../../components/DashboardHeader'
 import { Question } from '../../components/Question'
 import { Q1Dashboard } from './Q1Dashboard'
 
+
 export const Dashboard = props => {
 
     
     return (
         <>
             <DashboardHeader />
-            <Q1Dashboard />
-
+            <div className="dashboard">
+                <Q1Dashboard />
+            </div>
         </>
     )
 }
