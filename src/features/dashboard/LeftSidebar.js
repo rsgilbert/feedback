@@ -5,6 +5,7 @@ import { QOption } from './QOption'
 import { useDispatch, useSelector } from 'react-redux'
 import { selectQuestions } from './dashboardSlice'
 import { questionOptionSelected } from './dashboardSlice'
+import { SelectTitle } from './SelectTitle'
 
 
 export const LeftSidebar = () => {
@@ -29,11 +30,9 @@ export const LeftSidebar = () => {
 
     return (
         <div className="left-sidebar">
-            <div className="start-time">
-                start time
-            </div>
+            <SelectTitle title="Start Date" />
             <div className="question">
-                <p className="select-question">Select Question</p>
+                <SelectTitle title="Select Question" />
                 {renderQuestions}
             </div>
         </div>

@@ -1,9 +1,37 @@
 import { createSlice } from '@reduxjs/toolkit'
-import React from 'react'
 import { Q1BarChart } from '../chart/Q1BarChart'
 import { Q1PieChart } from '../chart/Q1PieChart'
 
 const initialState = {
+    regions: [
+        {
+            id: "1",
+            name: "Hoima",
+            isSelected: false
+        },
+        {
+            id: "2",
+            name: "Kampala",
+            isSelected: true
+        },
+        {
+            id: "3",
+            name: "Mbale",
+            isSelected: false
+        },
+    ],
+    questions: [
+        {
+            id: "1",
+            question: "1. What is your organization?",
+            isSelected: true,
+        }, 
+        {
+            id: "2", 
+            question: "2. What is your name?",
+            isSelected: false,
+        },
+    ],
     feedback: [
         {
             id: "1",
@@ -45,25 +73,40 @@ const dashboardSlice = createSlice({
         },
 
         questionOptionSelected(state, action) {
-            const questions = state.feedback.map(f => f.question)
+            const questions = state.questions
             const { questionId } = action.payload
             const question = questions.find(q => q.id === questionId)
             const otherQuestions = questions.filter(q => q.id !== questionId)
             question.isSelected = true
             otherQuestions.forEach(oq => oq.isSelected = false)
+        },
+
+        regionSelected(state, action) {
+            const regions = state.regions
+            const { regionId, isSelected } = action.payload
+            const region = regions.find(r => r.id === regionId)
+            region.isSelected = isSelected
         }
     }
 })
 
 
-export const { chartShown, questionOptionSelected } = dashboardSlice.actions
+export const { 
+    chartShown,
+    questionOptionSelected,
+    regionSelected,
+} = dashboardSlice.actions
 
 
 export default dashboardSlice.reducer
 
 export const selectFeedback = state => state.dashboard.feedback
 
-export const selectQuestions = state => state.dashboard.feedback.map(f => f.question)
+export const selectQuestions = state => state.dashboard.questions
+
+export const selectRegions = state => state.dashboard.regions
+
+
 
 export const selectQ1Dashboard = state => state.dashboard.q1
 

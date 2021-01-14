@@ -1,0 +1,32 @@
+/*
+ https://stackoverflow.com/a/27779075 
+*/
+
+label {
+    display: flex;
+    /* padding: .5em; */
+    border-radius: .25em;
+    /* margin-top: .5em; */
+    cursor: pointer;
+    align-items: center;
+}
+
+label input {
+    display: none;
+}
+
+label span {
+    height: 1em;
+    width: 1em;
+    border: 1px solid var(--theme-color);
+    display:flex;
+    margin-right: 1em;
+    justify-content: center;
+    border-radius: 2px;
+    align-items: center;
+}
+
+[type=checkbox]:checked + span:before {
+    content: '\2714';
+    color: var(--theme-color);
+}
