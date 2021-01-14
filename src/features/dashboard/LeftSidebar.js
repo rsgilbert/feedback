@@ -6,6 +6,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { selectQuestions } from './dashboardSlice'
 import { questionOptionSelected } from './dashboardSlice'
 import { SelectTitle } from './SelectTitle'
+import { Date, DateFilter } from './DateFilter'
 
 
 export const LeftSidebar = () => {
@@ -30,11 +31,15 @@ export const LeftSidebar = () => {
 
     return (
         <div className="left-sidebar">
-            <SelectTitle title="Start Date" />
-            <div className="question">
+            <section>
+                <SelectTitle title="Start Date" />
+                <DateFilter />
+            </section>
+
+            <section className="question">
                 <SelectTitle title="Select Question" />
                 {renderQuestions}
-            </div>
+            </section>
         </div>
     )
 }

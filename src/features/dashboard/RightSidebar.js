@@ -6,6 +6,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { regionSelected, selectRegions } from './dashboardSlice'
 import { SelectTitle } from './SelectTitle'
 import { QCheckbox } from './QCheckbox'
+import { Date, DateFilter } from './DateFilter'
 
 
 export const RightSidebar = () => {
@@ -33,11 +34,14 @@ export const RightSidebar = () => {
     })
     return (
         <div className="right-sidebar">
-            <SelectTitle title="End Date" />
-            <div className="region">
+            <section>
+                <SelectTitle title="End Date" />
+                {/* <DateFilter /> */}
+            </section>
+            <section className="region">
                 <SelectTitle title="Select Region" />
                 { renderRegions }
-            </div>
+            </section>
         </div>
     )
 }
