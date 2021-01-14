@@ -2,18 +2,29 @@ import React from 'react'
 import * as d3 from 'd3'
 import './Dashboard.css'
 import { DashboardHeader } from '../../components/DashboardHeader'
-import { Question } from '../../components/Question'
-import { Q1Dashboard } from './Q1Dashboard'
+import { LeftSidebar } from './LeftSidebar'
+import { RightSidebar } from './RightSidebar'
+import { useSelector } from 'react-redux'
+import { selectQuestions } from './dashboardSlice'
+
 
 
 export const Dashboard = props => {
+    const questions = useSelector(selectQuestions)
 
     
     return (
         <>
-            <DashboardHeader />
             <div className="dashboard">
-                <Q1Dashboard />
+                <div className="left-sidebar">
+                    <LeftSidebar questions={questions}/>
+                </div>
+                <div className="dashboard-main">
+                    k
+                </div>
+                <div className="right-sidebar">
+                    <RightSidebar />
+                </div>
             </div>
         </>
     )

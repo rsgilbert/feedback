@@ -6,7 +6,7 @@ import { useHistory } from 'react-router-dom'
 export const Header = props => {
     const history = useHistory()
 
-    const goToHome = () => history.push("/")
+    const goToHome = () => history.push("/d")
     return (
         <header className={styles.header} onClick={goToHome}>  
             <img className={styles.header__logo} src={logo} alt="logo" />

@@ -1,0 +1,33 @@
+.qoption {
+    border-radius: .25em;
+    cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.qoption:not(:first-of-type) {
+    margin-top: .5em;
+}
+
+.dot-container {
+    margin: 0 .25em;
+}
+.dot {
+    height: 1em;
+    width: 1em;
+    margin: 0 auto;
+    border: 1px solid var(--theme-color);
+    border-radius: 1em;
+    outline: none;
+}
+
+.dot:active {
+    outline: none;
+
+}
+
+.colored {
+    background-color: var(--theme-color);
+}

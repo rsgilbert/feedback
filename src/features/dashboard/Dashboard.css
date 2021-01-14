@@ -1,8 +1,27 @@
 .dashboard {
     display: grid;
+    grid-template-columns: [left-sidebar-start] 1fr 
+        [left-sidebar-end dashboard-main-start] 2fr 
+        [dashboard-main-end right-sidebar-start] 1fr [right-sidebar-end];
+    grid-gap: 1em;
+    max-width: 1080px;
+    margin: 0 auto;
+}
+
+.dashboard-main {
+    grid-column: dashboard-main;
+    background-color: hotpink;
+}
+
+.left-sidebar {
+    grid-column: left-sidebar;
 }
 
 
+.right-sidebar {
+    grid-column: right-sidebar;
+    background-color: green;
+}
 
 
 div.bar {

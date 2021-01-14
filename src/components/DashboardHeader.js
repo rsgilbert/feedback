@@ -9,9 +9,13 @@ export const DashboardHeader = props => {
 
     return (
         <>
-        
-            <h1 className="dashboard-h1">Feedback Dashboard</h1>
-            <ul className="dashboard-ul">
+           <h1 className="dashboard-h1">Feedback Dashboard</h1>
+        </>
+    )
+}
+
+
+{/* <ul className="dashboard-ul">
                     <li>
                         <a href="#q1">Q1</a>
                     </li>
@@ -30,8 +34,5 @@ export const DashboardHeader = props => {
                     <li>
                         <a href="#q6">Q6</a>
                     </li>
-
                 </ul>
-        </>
-    )
-}
+        */}
