@@ -4,13 +4,14 @@ import classNames from 'classnames'
 
 
 
-export const QOption = ({ question }) => {
+export const QOption = ({ question, handleOptionSelected }) => {
 
     const questionId = question.id
+    const isColored = question.isSelected
     
 
     const optionSelected = () => {
-        
+        handleOptionSelected(questionId)
     }
 
     return (
@@ -22,15 +23,11 @@ export const QOption = ({ question }) => {
                 <div className={
                     classNames({
                         "dot": true,
-                        "colored": true
+                        "colored": isColored
                     })
                     }/>
             </div>
            
-            {/* <div className={
-                classNames({
-                    ["dot"]: true
-                })} /> */}
             <div className="data">
                 {question.question}
             </div>

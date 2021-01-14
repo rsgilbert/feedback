@@ -10,6 +10,7 @@ const initialState = {
             question: {
                 id: "1",
                 question: "1. What is your organization?",
+                isSelected: true,
             },
             options: [
                 {'id': '1', 'option': 'Abim District Local Government', count: 3 },
@@ -20,8 +21,9 @@ const initialState = {
         {
             id: "2",
             question: {
+                id: "2", 
                 question: "2. What is your name?",
-                id: "2" 
+                isSelected: false,
             },
             options: [
                 {'id': '1', 'option': 'Abim District Local Government', count: 3 },
@@ -40,12 +42,21 @@ const dashboardSlice = createSlice({
             const chartId = action.payload
             const chart = state.charts.find(ch => ch.id === chartId)
             chart.isShown = true
+        },
+
+        questionOptionSelected(state, action) {
+            const questions = state.feedback.map(f => f.question)
+            const { questionId } = action.payload
+            const question = questions.find(q => q.id === questionId)
+            const otherQuestions = questions.filter(q => q.id !== questionId)
+            question.isSelected = true
+            otherQuestions.forEach(oq => oq.isSelected = false)
         }
     }
 })
 
 
-export const { chartShown } = dashboardSlice.actions
+export const { chartShown, questionOptionSelected } = dashboardSlice.actions
 
 
 export default dashboardSlice.reducer

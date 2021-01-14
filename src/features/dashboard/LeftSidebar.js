@@ -2,11 +2,28 @@ import React from 'react'
 import './LeftSidebar.css'
 import { QOption } from './QOption'
 
-export const LeftSidebar = ({ questions }) => {
+import { useDispatch, useSelector } from 'react-redux'
+import { selectQuestions } from './dashboardSlice'
+import { questionOptionSelected } from './dashboardSlice'
+
+
+export const LeftSidebar = () => {
+    const dispatch = useDispatch()
+
+    const questions = useSelector(selectQuestions)
 
     const renderQuestions = questions.map(question => {
+        const questionId = question.id
+        const handleOptionSelected = () => {
+            dispatch(questionOptionSelected({ questionId }))
+        }
+
         return (
-            <QOption question={question} key={question.id}/>
+            <QOption 
+                question={question}
+                handleOptionSelected={handleOptionSelected}
+                key={question.id}
+                />
         )
     })
 
