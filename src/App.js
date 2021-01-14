@@ -14,27 +14,44 @@ import { Q5 } from './features/q5/Q5';
 import { Q6 } from './features/q6/Q6';
 import { Dashboard } from './features/dashboard/Dashboard';
 import { D } from './features/dashboard/D';
-import { Header } from './components/Header'
+import { Header } from './features/headers/Header'
+import { IndexHeader } from './features/headers/IndexHeader';
+import { CommentPage } from './features/comment/CommentPage';
 
 function App() {
   return (
     <div className="app">
-      <Router>
-        <main className="main">
-        <Header />
-          <Switch>
-            <Route exact path="/" component={IndexPage} />
-            <Route exact path="/1" component={Q1} />
-            <Route exact path="/2" component={Q2} />
-            <Route exact path="/3" component={Q3} />
-            <Route exact path="/4" component={Q4} />
-            <Route exact path="/5" component={Q5} />
-            <Route exact path="/6" component={Q6} />
-            <Route exact path="/dashboard" component={Dashboard} />
-            <Route exact path="/d" component={Dashboard} />
-            <Redirect to="/" />
-          </Switch>
-        </main>
+        <Router>
+            <header>
+                <Switch>
+                    <Route exact path="/" component={IndexHeader} />
+                    <Route exact path="/1" component={Header } />
+                    <Route exact path="/2" component={Header} />
+                    <Route exact path="/3" component={Header} />
+                    <Route exact path="/4" component={Header} />
+                    <Route exact path="/5" component={Header} />
+                    <Route exact path="/6" component={Header} />
+                    <Route exact path="/7" component={Header} />
+                    <Route exact path="/dashboard" component={Header} />
+                    <Route exact path="/d" component={Header} />
+                </Switch>
+            </header>
+          
+            <main className="main">
+                <Switch>
+                    <Route exact path="/" component={IndexPage} />
+                    <Route exact path="/1" component={Q1} />
+                    <Route exact path="/2" component={Q2} />
+                    <Route exact path="/3" component={Q3} />
+                    <Route exact path="/4" component={Q4} />
+                    <Route exact path="/5" component={Q5} />
+                    <Route exact path="/6" component={Q6} />
+                    <Route exact path="/dashboard" component={Dashboard} />
+                    <Route exact path="/d" component={Dashboard} />
+                    <Route exact path="/7" component={CommentPage} />
+                    <Redirect to="/" />
+                </Switch>
+            </main>
       </Router>
     </div>
   );

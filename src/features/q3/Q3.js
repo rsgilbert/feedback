@@ -1,5 +1,5 @@
 import React from 'react'
-import { Header } from '../../components/Header'
+import { Header } from '../headers/Header'
 import { Question } from '../../components/Question'
 import { useSelector, useDispatch } from 'react-redux'
 import { selectQuestion, selectAnswers, answersUpdated } from '../q3/q3Slice'

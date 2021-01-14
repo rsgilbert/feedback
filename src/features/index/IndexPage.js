@@ -1,10 +1,12 @@
 import React from 'react'
-import { Header } from '../../components/Header'
+import { Header } from '../headers/Header'
 import './IndexPage.css'
 import { MyButton } from '../../components/MyButton'
 import { useHistory } from 'react-router-dom'
+import logo from '../../logo.png'
 
 export const IndexPage = props => {
+    const feedbackTitle = 'Feedback Form'
     const history = useHistory()
 
     const goToPage1 = () => {
@@ -16,8 +18,10 @@ export const IndexPage = props => {
         <>
             <div className="container">
                 <div className="index">
+                    <img className="index-logo" src={logo} alt="logo" />
+           
                     <h1>
-                        Welcome!
+                        { feedbackTitle }
                     </h1>
                     <p>
                         Thank you for taking time to fill in our feedback form.

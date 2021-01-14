@@ -1,0 +1,19 @@
+.index-header {
+    padding: 1.5em;
+    background-color: var(--theme-color);
+    color: white;
+}
+
+.index-header > h1 {
+    font-size: 1.2em;
+    margin: 0;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.header__logo {
+    width: 2.7em;
+    position: absolute;
+    top: .85em;
+    left: 1.25em;
+}

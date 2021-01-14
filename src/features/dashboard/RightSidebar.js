@@ -33,7 +33,7 @@ export const RightSidebar = () => {
     })
     return (
         <div className="right-sidebar">
-            <SelectTitle title="Start Date" />
+            <SelectTitle title="End Date" />
             <div className="region">
                 <SelectTitle title="Select Region" />
                 { renderRegions }

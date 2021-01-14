@@ -1,5 +1,5 @@
 import React from 'react'
-import { Header } from './Header.js'
+import { Header } from '../features/headers/Header.js'
 import './DashboardHeader.css'
 
 

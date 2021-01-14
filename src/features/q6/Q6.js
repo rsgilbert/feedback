@@ -1,5 +1,5 @@
 import React from 'react'
-import { Header } from '../../components/Header'
+import { Header } from '../headers/Header'
 import { useSelector, useDispatch } from 'react-redux'
 import { selectQuestion, selectAllOptions, selectAnswerId, answerIdUpdated } from './q6Slice'
 import { Question } from '../../components/Question'
@@ -38,7 +38,7 @@ export const Q6 = props => {
                 <Question question={question} />
                 { optionsContent }
             </div>
-            <Actions noNext={true} hasFinish={true} isAnswered={!!answerId}/>
+            <Actions isAnswered={!!answerId}/>
         </div>
     )
 }
