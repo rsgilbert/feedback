@@ -19,7 +19,7 @@ import { client } from '../api/client'
 
 
 const APi_SUBMIT_FORM_LOCAL = 'http://localhost:8000/submit-form'
-const APi_SUBMIT_FORM = 'http://tscapi.herokuapp.com/submit-form'
+const APi_SUBMIT_FORM = 'https://tscapi.herokuapp.com/submit-form'
 
 
 export const FinishButton = props => {
