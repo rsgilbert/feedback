@@ -12,7 +12,7 @@ export const DateFilter = () => {
                 type="Date" 
                 date={date} 
                 defaultValue={Date()}
-                value={date} />
+               />
         </>
     )
 }
