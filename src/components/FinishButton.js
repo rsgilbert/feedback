@@ -45,6 +45,7 @@ export const FinishButton = props => {
     }
 
     const sendFeedback = async (feedback) => {
+        console.log(APi_SUBMIT_FORM)
         var feedbackJson = JSON.stringify(feedback)
         const resp = await client.post(APi_SUBMIT_FORM, feedbackJson)
         console.log(resp.JSON)
