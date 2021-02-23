@@ -5,11 +5,13 @@ import classNames from 'classnames'
 export const MultipleOption = props => {
 
     const answers = props.answers
-    const matchingAnswer = answers.find(ans => ans.answerId === props.option.id)
+    // const matchingAnswer = answers.find(ans => ans.answerId === props.option.id)
+    const matchingAnswer = answers.find(ans => ans.answerId === props.option.option)
     const isAnswer = Boolean(matchingAnswer)
 
     const optionSelected = () => {
-        props.handleClick(props.option.id)
+        // props.handleClick(props.option.id)
+        props.handleClick(props.option.option)
     }
 
     return (

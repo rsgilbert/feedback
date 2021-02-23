@@ -6,10 +6,13 @@ export const Option = props => {
 
     const answerId = props.answerId
 
-    const isAnswer = answerId === props.option.id
+    // const isAnswer = answerId === props.option.id
+    const isAnswer = answerId === props.option.option
 
     const optionSelected = () => {
-        props.handleClick(props.option.id)
+        // props.handleClick(props.option.id)
+        // Use option text [for easy integration with api]
+        props.handleClick(props.option.option)
     }
 
     return (

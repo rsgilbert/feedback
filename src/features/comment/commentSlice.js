@@ -11,23 +11,29 @@ const commentSlice = createSlice({
     name: "comment",
     initialState,
     reducers: {
-        answerIdUpdated(state, action) {
-            const { answerId } = action.payload
-            state.answerId = answerId
+        commentUpdated(state, action) {
+            const { comment } = action.payload
+            state.comment = comment
         },
-        q2answerCleared(state) {
-            state.answerId = null
+
+        commentCleared(state) {
+            state.comment = ''
         }
     }
 })
 
 
-export const { answerIdUpdated, q2answerCleared } = commentSlice.actions
+export const { commentUpdated, commentCleared } = commentSlice.actions
  
 export default commentSlice.reducer
 
 export const selectQuestion = state => state.comment.question
 
+export const selectCommentQA = state => {
+    return {
+        comment: state.comment.comment
+    }
+}
 
 
 

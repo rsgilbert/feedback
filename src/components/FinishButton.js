@@ -14,7 +14,11 @@ import { selectq4QA, q4answerCleared } from '../features/q4/q4Slice'
 import { selectq3QA, q3answersCleared } from '../features/q3/q3Slice'
 import { selectq2QA, q2answerCleared } from '../features/q2/q2Slice'
 import { selectq1QA, q1answerCleared } from '../features/q1/q1Slice'
+import { selectCommentQA, commentCleared } from '../features/comment/commentSlice'
+import { client } from '../api/client'
 
+
+const APi_SUBMIT_FORM = 'http://localhost:8000/submit-form'
 
 
 export const FinishButton = props => {
@@ -27,6 +31,7 @@ export const FinishButton = props => {
     const q4QA = useSelector(selectq4QA)
     const q5QA = useSelector(selectq5QA)
     const q6QA = useSelector(selectq6QA)
+    const commentQA = useSelector(selectCommentQA)
 
     function clearAnswers() {
         dispatch(q1answerCleared())
@@ -35,6 +40,13 @@ export const FinishButton = props => {
         dispatch(q4answerCleared())
         dispatch(q5answerCleared())
         dispatch(q6answerCleared())
+        dispatch(commentCleared())
+    }
+
+    const sendFeedback = async (feedback) => {
+        var feedbackJson = JSON.stringify(feedback)
+        const resp = await client.post(APi_SUBMIT_FORM, feedbackJson)
+        console.log(resp)
     }
 
 
@@ -47,17 +59,21 @@ export const FinishButton = props => {
             [q3QA.q]: q3QA.a,
             [q4QA.q]: q4QA.a,
             [q5QA.q]: q5QA.a,
-            [q6QA.q]: q6QA.a
+            [q6QA.q]: q6QA.a,
+            comment: commentQA.comment
         }
-        clearAnswers()
-        console.log(feedback)
-        Swal.fire({
-            title: 'Thank You!',
-            text: 'Your feedback has been recorded',
-            icon: 'success'
 
-        })
-        .then(() => goToHome())
+        sendFeedback(feedback)
+
+        //clearAnswers()
+        console.log(feedback)
+        // Swal.fire({
+        //     title: 'Thank You!',
+        //     text: 'Your feedback has been recorded',
+        //     icon: 'success'
+        // })
+        // .then(() => {})
+        // .then(() => goToHome())
     }
 
     const goToHome = () => history.push("/")

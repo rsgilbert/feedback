@@ -72,6 +72,7 @@ export const selectAnswers = state => state.q3.answers
 export const selectq3QA = state => {
     return {
         q: state.q3.id,
-        a: state.q3.answers
+        a: state.q3.answers.map(a => a.answerId)
+        // a: state.q3.answers
     }
 }

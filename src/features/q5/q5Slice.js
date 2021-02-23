@@ -3,7 +3,7 @@ import { createSlice } from '@reduxjs/toolkit'
 
 const initialState = {
     id: "5",
-    question: "How long did it take to resolve your issue?",
+    question: "5. How long did it take to resolve your issue?",
     options: [
         {
             id: "1",
