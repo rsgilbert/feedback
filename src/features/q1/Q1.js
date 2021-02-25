@@ -51,7 +51,7 @@ export const Q1 = props => {
                 </div>
             </div>
             <Actions 
-                isAnswered={!answerId}
+                isAnswered={!!answerId}
                 noPrevious={true}/>
         </div>
     )

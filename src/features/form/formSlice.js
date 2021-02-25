@@ -96,6 +96,14 @@ const formSlice = createSlice({
             if (question) question.answerId = optionId
             console.log(question)
         },
+
+        formCleared(state) {
+            state.questions.forEach(q => {
+                if(q.answerId) q.answerId = undefined
+                if(q.answers && q.answers.length) q.answers = undefined
+            })
+        },
+
         reactionAdded(state, action) {
             // const { formId, reaction } = action.payload
             // const existingForm = state.form.find(form => form.id === formId)
@@ -136,13 +144,20 @@ const formSlice = createSlice({
     }
 })
 
-export const { formAdded, questionAnswered, questionMultipleAnswered, reactionAdded } =  formSlice.actions
+export const { formAdded, questionAnswered, questionMultipleAnswered, reactionAdded, formCleared } =  formSlice.actions
 
 export default formSlice.reducer
 
 export const selectAllQuestions = state => state.form.questions
 
 export const selectQuestionById = (state, questionId) => state.form.questions.find(question => question.id === questionId)
+
+export const selectAllAnswers = state => {
+    return state.form.questions.map( q => {
+        if(q.id === 3) return ({ q: 3, answers: q.answers })
+        if(q.id !== 7) return ({ q: q.id, a: q.answerId })
+    })
+}
 
 // export const selectAnswerId = (state, questionId) => state.form.questions.find(question => question.id === )
 

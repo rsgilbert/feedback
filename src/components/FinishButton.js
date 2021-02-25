@@ -16,11 +16,14 @@ import { selectq2QA, q2answerCleared } from '../features/q2/q2Slice'
 import { selectq1QA, q1answerCleared } from '../features/q1/q1Slice'
 import { selectCommentQA, commentCleared } from '../features/comment/commentSlice'
 import { client } from '../api/client'
+import { selectAllAnswers, formCleared } from '../features/form/formSlice'
 
 
-const APi_SUBMIT_FORM_LOCAL = 'http://localhost:8000/submit-form'
-const APi_SUBMIT_FORM = 'https://tscapi.herokuapp.com/submit-form'
 
+const API_SUBMIT_FORM_LOCAL = 'http://localhost:8000/submit-form'
+const API_SUBMIT_FORM_PROD = 'https://tscapi.herokuapp.com/submit-form'
+
+const API_SUBMIT_FORM = API_SUBMIT_FORM_LOCAL
 
 export const FinishButton = props => {
     const history = useHistory()
@@ -34,6 +37,10 @@ export const FinishButton = props => {
     const q6QA = useSelector(selectq6QA)
     const commentQA = useSelector(selectCommentQA)
 
+
+    // get answers from form slice
+    const answers = useSelector(selectAllAnswers)
+
     function clearAnswers() {
         dispatch(q1answerCleared())
         dispatch(q2answerCleared())
@@ -45,37 +52,50 @@ export const FinishButton = props => {
     }
 
     const sendFeedback = async (feedback) => {
-        console.log(APi_SUBMIT_FORM)
+        console.log(API_SUBMIT_FORM)
         var feedbackJson = JSON.stringify(feedback)
-        const resp = await client.post(APi_SUBMIT_FORM, feedbackJson)
+        const resp = await client.post(API_SUBMIT_FORM, feedbackJson)
         console.log(resp.JSON)
+    }
+
+    const getFeedback = () => {
+        const feedback = {
+            comment: commentQA.comment,
+            answers
+        }
+        // console.log(feedback)
+        return feedback
     }
 
 
 
     const handleClick = () => {
         // const db = firebase.firestore()
-        const feedback = {
-            [q1QA.q]: q1QA.a,
-            [q2QA.q]: q2QA.a,
-            [q3QA.q]: q3QA.a,
-            [q4QA.q]: q4QA.a,
-            [q5QA.q]: q5QA.a,
-            [q6QA.q]: q6QA.a,
-            comment: commentQA.comment
-        }
+        // const feedback = {
+        //     [q1QA.q]: q1QA.a,
+        //     [q2QA.q]: q2QA.a,
+        //     [q3QA.q]: q3QA.a,
+        //     [q4QA.q]: q4QA.a,
+        //     [q5QA.q]: q5QA.a,
+        //     [q6QA.q]: q6QA.a,
+        //     comment: commentQA.comment
+        // }
+        const feedback = getFeedback()
 
         sendFeedback(feedback)
 
         //clearAnswers()
         console.log(feedback)
-        // Swal.fire({
-        //     title: 'Thank You!',
-        //     text: 'Your feedback has been recorded',
-        //     icon: 'success'
-        // })
+        Swal.fire({
+            title: 'Thank You!',
+            text: 'Your feedback has been recorded',
+            icon: 'success'
+        })
         // .then(() => {})
-        // .then(() => goToHome())
+        .then(() => {
+            dispatch(formCleared())
+            goToHome()
+        })
     }
 
     const goToHome = () => history.push("/")

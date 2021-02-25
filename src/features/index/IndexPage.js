@@ -18,9 +18,9 @@ export const IndexPage = props => {
     const formStatus = useSelector(state => state.form.status )
     const error = useSelector(state => state.form.error)
 
-    setTimeout(() => {
-        goToPage1()
-    }, 500);
+    // setTimeout(() => {
+    //     goToPage1()
+    // }, 500);
 
     useEffect(() => {
         if(formStatus === 'idle') {
