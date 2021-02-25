@@ -3,7 +3,7 @@ import { client } from '../../api/client'
 
 
 
-const isProd = false
+const isProd = true
 
 const API_FETCH_FORM_DEV  = "http://localhost:8000/form-data"
 const API_FETCH_FORM_PROD = "https://tscapi.herokuapp.com/form-data"

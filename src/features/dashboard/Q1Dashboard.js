@@ -1,6 +1,7 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
-import { selectQ1Dashboard, selectQ1Charts, selectNotShownQ1Charts, selectShownQ1Charts,  } from './dashboardSlice'
+// import { selectQ1Dashboard, selectQ1Charts, selectNotShownQ1Charts, selectShownQ1Charts,  } from './dashboardSlice'
+import { selectQ1Dashboard} from './dashboardSlice'
 import { Question } from '../../components/Question'
 import { ChartList } from '../../components/ChartList'
 

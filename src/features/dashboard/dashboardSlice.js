@@ -110,8 +110,8 @@ export const selectRegions = state => state.dashboard.regions
 
 export const selectQ1Dashboard = state => state.dashboard.q1
 
-export const selectQ1Charts = state => state.dashboard.charts.filter(chart => chart.questionId === "1")
+//export const selectQ1Charts = state => state.dashboard.charts.filter(chart => chart.questionId === "1")
 
-export const selectShownQ1Charts = state => selectQ1Charts(state).filter(ch => ch.isShown)
+// export const selectShownQ1Charts = state => selectQ1Charts(state).filter(ch => ch.isShown)
 
-export const selectNotShownQ1Charts = state => selectQ1Charts(state).filter(ch => !ch.isShown)
+// export const selectNotShownQ1Charts = state => selectQ1Charts(state).filter(ch => !ch.isShown)

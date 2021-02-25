@@ -23,7 +23,7 @@ import { selectAllAnswers, formCleared } from '../features/form/formSlice'
 const API_SUBMIT_FORM_LOCAL = 'http://localhost:8000/submit-form'
 const API_SUBMIT_FORM_PROD = 'https://tscapi.herokuapp.com/submit-form'
 
-const API_SUBMIT_FORM = API_SUBMIT_FORM_LOCAL
+const API_SUBMIT_FORM = API_SUBMIT_FORM_PROD
 
 export const FinishButton = props => {
     const history = useHistory()

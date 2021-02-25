@@ -12,7 +12,8 @@ import { Q3 } from './features/q3/Q3';
 import { Q4 } from './features/q4/Q4';
 import { Q5 } from './features/q5/Q5';
 import { Q6 } from './features/q6/Q6';
-import { Dashboard } from './features/dashboard/Dashboard';
+// import { Dashboard } from './features/dashboard/Dashboard';
+import { Dash } from './features/dash/Dashboard';
 import { D } from './features/dashboard/D';
 import { Header } from './features/headers/Header'
 import { IndexHeader } from './features/headers/IndexHeader';
@@ -46,8 +47,8 @@ function App() {
                     <Route exact path="/4" component={Q4} />
                     <Route exact path="/5" component={Q5} />
                     <Route exact path="/6" component={Q6} />
-                    <Route exact path="/dashboard" component={Dashboard} />
-                    <Route exact path="/d" component={Dashboard} />
+                    <Route exact path="/dashboard" component={Dash} />
+                    <Route exact path="/d" component={Dash} />
                     <Route exact path="/7" component={CommentPage} />
                     <Redirect to="/" />
                 </Switch>
