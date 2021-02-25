@@ -8,20 +8,24 @@ import { Search } from '../../components/Search'
 import { Option } from '../../components/Option'
 import { selectSearch, searchCleared } from '../search/searchSlice'
 import { Actions } from  '../../components/Actions'
-
+import { selectQuestionById, questionAnswered } from '../form/formSlice'
 
 
 export const Q1 = props => {
-    const question = useSelector(selectQuestion)
-    const allOptions = useSelector(selectAllOptions)
+    // const question = useSelector(selectQuestion)
+    // const allOptions = useSelector(selectAllOptions)
     const search = useSelector(selectSearch)
     const answerId = useSelector(selectAnswerId)
     const dispatch = useDispatch()
+    const question = useSelector(state => selectQuestionById(state, 1))
+    console.log(question)
+    const allOptions = question.options
     // const questions = useSelector(selectAllQuestions)
     // const formStatus = useSelector(state => state.form.status )
   
-    const setAnswerId = answerId => dispatch(answerIdUpdated({ answerId }))
-    console.log(answerId)
+    // const setAnswerId = answerId => dispatch(answerIdUpdated({ answerId }))
+    const setAnswerId = answerId = dispatch(questionAnswered({ questionId: "1", optionId: answerId }))
+
     let options = []
     if(search !== "") {
         options = allOptions.filter(o => o.option.toLowerCase().includes(search.toLowerCase()))
@@ -38,7 +42,7 @@ export const Q1 = props => {
     return (
         <div>
             <div className="container">
-                <Question question={question} />
+                <Question question={question.question} />
                 <Search />
 
                 <div className="options" >

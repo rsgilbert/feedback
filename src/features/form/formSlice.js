@@ -77,13 +77,10 @@ const formSlice = createSlice({
                 // }
             }
         },
-        formUpdated(state, action) {
-            const { id, title, content } = action.payload
-            const existingForm = state.form.find(form => form.id === id)
-            if(existingForm) {
-                existingForm.title = title
-                existingForm.content = content
-            }
+        questionAnswered(state, action) {
+            const { questionId, optionId } = action.payload
+            const question = state.questions.find(question => question.question.id === questionId)
+            question.answerId = optionId
         },
         reactionAdded(state, action) {
             // const { formId, reaction } = action.payload
@@ -125,7 +122,7 @@ const formSlice = createSlice({
     }
 })
 
-export const { formAdded, formUpdated, reactionAdded } =  formSlice.actions
+export const { formAdded, questionAnswered, reactionAdded } =  formSlice.actions
 
 export default formSlice.reducer
 

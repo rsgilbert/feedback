@@ -30,7 +30,7 @@ export const IndexPage = props => {
     } else if(formStatus === 'succeeded') {
         // const orderedPosts = form.slice().sort((a, b) => b.dateIso.localeCompare(a.dateIso))
         content = questions.map(question => (
-            <div> {question.question} </div>
+            <div key={question.id}> {question.question} </div>
         ))
     } else if(formStatus === 'error' || formStatus ===  'failed') {
         content = <div>An error occured while fetching form: { error }</div>
