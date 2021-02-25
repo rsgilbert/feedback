@@ -77,10 +77,24 @@ const formSlice = createSlice({
                 // }
             }
         },
+
+        questionMultipleAnswered(state, action) {
+            const { questionId, answers } = action.payload
+            const question = state.questions.find(question => question.id === questionId)
+            if (question) {
+                question.answers = answers
+            }
+            else console.log('no question')
+            console.log(question)
+        },
+
+
         questionAnswered(state, action) {
             const { questionId, optionId } = action.payload
-            const question = state.questions.find(question => question.question.id === questionId)
-            question.answerId = optionId
+            console.log(action.payload)
+            const question = state.questions.find(question => question.id == questionId)
+            if (question) question.answerId = optionId
+            console.log(question)
         },
         reactionAdded(state, action) {
             // const { formId, reaction } = action.payload
@@ -122,13 +136,16 @@ const formSlice = createSlice({
     }
 })
 
-export const { formAdded, questionAnswered, reactionAdded } =  formSlice.actions
+export const { formAdded, questionAnswered, questionMultipleAnswered, reactionAdded } =  formSlice.actions
 
 export default formSlice.reducer
 
 export const selectAllQuestions = state => state.form.questions
 
 export const selectQuestionById = (state, questionId) => state.form.questions.find(question => question.id === questionId)
+
+// export const selectAnswerId = (state, questionId) => state.form.questions.find(question => question.id === )
+
 
 // export const selectFormsByUser = createSelector(
 //     [selectAllForms, (state, userId) => userId],

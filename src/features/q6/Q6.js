@@ -12,16 +12,18 @@ import { PreviousButton } from '../../components/PreviousButton'
 import { FinishButton } from '../../components/FinishButton'
 import { Actions } from '../../components/Actions'
 
+import { selectQuestionById, questionAnswered } from '../form/formSlice'
+
 
 export const Q6 = props => {
-    const question = useSelector(selectQuestion)
-    const allOptions = useSelector(selectAllOptions)
     const search = useSelector(selectSearch)
-    const answerId = useSelector(selectAnswerId)
     const dispatch = useDispatch()
  
-    const setAnswerId = answerId => dispatch(answerIdUpdated({ answerId }))
-    
+    const question = useSelector(state => selectQuestionById(state, 6))
+    const allOptions = question.options
+    const answerId = question.answerId 
+    const setAnswerId = answerId => dispatch(questionAnswered({ questionId: 6, optionId: answerId }))
+
     const options = allOptions.filter(o => o.option.toLowerCase().includes(search.toLowerCase()))
     const optionsContent = options.map(option => 
         <Option 
@@ -35,7 +37,7 @@ export const Q6 = props => {
     return (
         <div>
             <div className="container">
-                <Question question={question} />
+                <Question question={question.question} />
                 { optionsContent }
             </div>
             <Actions isAnswered={!!answerId}/>

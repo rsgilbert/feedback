@@ -11,16 +11,18 @@ import { useHistory } from 'react-router-dom'
 import { PreviousButton } from '../../components/PreviousButton'
 import { Actions } from '../../components/Actions'
 
+import { selectQuestionById, questionAnswered } from '../form/formSlice'
+
 
 export const Q4 = props => {
-    const question = useSelector(selectQuestion)
-    const allOptions = useSelector(selectAllOptions)
     const search = useSelector(selectSearch)
-    const answerId = useSelector(selectAnswerId)
     const dispatch = useDispatch()
 
-    const setAnswerId = answerId => dispatch(answerIdUpdated({ answerId }))
-    
+    const question = useSelector(state => selectQuestionById(state, 4))
+    const allOptions = question.options
+    const answerId = question.answerId 
+    const setAnswerId = answerId => dispatch(questionAnswered({ questionId: 4, optionId: answerId }))
+
     const options = allOptions.filter(o => o.option.toLowerCase().includes(search.toLowerCase()))
     const optionsContent = options.map(option => 
         <Option 
@@ -34,7 +36,7 @@ export const Q4 = props => {
     return (
         <div>
             <div className="container">
-                <Question question={question} />
+                <Question question={question.question} />
                 { optionsContent }
             </div>
             <Actions isAnswered={!!answerId}/>

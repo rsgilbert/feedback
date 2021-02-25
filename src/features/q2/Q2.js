@@ -9,17 +9,17 @@ import { selectSearch, searchCleared } from '../search/searchSlice'
 import { useHistory } from 'react-router-dom'
 import { Actions } from  '../../components/Actions'
 
+import { selectQuestionById, questionAnswered } from '../form/formSlice'
+
 export const Q2 = props => {
-    const question = useSelector(selectQuestion)
-    const allOptions = useSelector(selectAllOptions)
     const search = useSelector(selectSearch)
-    const answerId = useSelector(selectAnswerId)
     const dispatch = useDispatch()
  
-  
+    const question = useSelector(state => selectQuestionById(state, 2))
+    const allOptions = question.options
+    const answerId = question.answerId 
+    const setAnswerId = answerId => dispatch(questionAnswered({ questionId: 2, optionId: answerId }))
 
-    const setAnswerId = answerId => dispatch(answerIdUpdated({ answerId }))
-    
     const options = allOptions.filter(o => o.option.toLowerCase().includes(search.toLowerCase()))
     const optionsContent = options.map(option => 
         <Option 
@@ -33,7 +33,7 @@ export const Q2 = props => {
     return (
         <>     
             <div className="container content">
-                <Question question={question} />
+                <Question question={question.question} />
                 <div className="options" >
                     { optionsContent }
                 </div>                

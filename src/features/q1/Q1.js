@@ -15,16 +15,17 @@ export const Q1 = props => {
     // const question = useSelector(selectQuestion)
     // const allOptions = useSelector(selectAllOptions)
     const search = useSelector(selectSearch)
-    const answerId = useSelector(selectAnswerId)
+    // const answerId = useSelector(selectAnswerId)
     const dispatch = useDispatch()
     const question = useSelector(state => selectQuestionById(state, 1))
-    console.log(question)
+    // const answerId = useSelector(state => selectAnswerId(state, 1))
     const allOptions = question.options
+    const answerId = question.answerId
     // const questions = useSelector(selectAllQuestions)
     // const formStatus = useSelector(state => state.form.status )
   
     // const setAnswerId = answerId => dispatch(answerIdUpdated({ answerId }))
-    const setAnswerId = answerId = dispatch(questionAnswered({ questionId: "1", optionId: answerId }))
+    const setAnswerId = answerId => dispatch(questionAnswered({ questionId: 1, optionId: answerId }))
 
     let options = []
     if(search !== "") {
@@ -50,7 +51,7 @@ export const Q1 = props => {
                 </div>
             </div>
             <Actions 
-                isAnswered={answerId !== null}
+                isAnswered={!answerId}
                 noPrevious={true}/>
         </div>
     )

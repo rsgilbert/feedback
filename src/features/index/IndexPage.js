@@ -10,6 +10,7 @@ import { fetchForm, selectAllQuestions } from '../form/formSlice'
 
 export const IndexPage = props => {
     const feedbackTitle = 'Feedback Form'
+    
 
     const history = useHistory()
     const dispatch = useDispatch()
@@ -17,6 +18,9 @@ export const IndexPage = props => {
     const formStatus = useSelector(state => state.form.status )
     const error = useSelector(state => state.form.error)
 
+    setTimeout(() => {
+        goToPage1()
+    }, 500);
 
     useEffect(() => {
         if(formStatus === 'idle') {
@@ -29,9 +33,9 @@ export const IndexPage = props => {
         content = <div className="loader">Loading...</div>
     } else if(formStatus === 'succeeded') {
         // const orderedPosts = form.slice().sort((a, b) => b.dateIso.localeCompare(a.dateIso))
-        content = questions.map(question => (
-            <div key={question.id}> {question.question} </div>
-        ))
+        // content = questions.map(question => (
+        //     <div key={question.id}> {question.question} </div>
+        // ))
     } else if(formStatus === 'error' || formStatus ===  'failed') {
         content = <div>An error occured while fetching form: { error }</div>
     }
@@ -47,12 +51,11 @@ export const IndexPage = props => {
             <div className="container">
                 <div className="index">
                     <img className="index-logo" src={logo} alt="logo" />
+                    
            
                     <h1>
                         { feedbackTitle }
                     </h1>
-                    <p>Content</p>
-                    { content }
                     <p>
                         Thank you for taking time to fill in our feedback form.
                     </p>

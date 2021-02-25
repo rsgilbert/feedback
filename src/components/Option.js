@@ -7,12 +7,12 @@ export const Option = props => {
     const answerId = props.answerId
 
     // const isAnswer = answerId === props.option.id
-    const isAnswer = answerId === props.option.option
+    const isAnswer = answerId === props.option.id
 
     const optionSelected = () => {
         // props.handleClick(props.option.id)
         // Use option text [for easy integration with api]
-        props.handleClick(props.option.option)
+        props.handleClick(props.option.id)
     }
 
     return (

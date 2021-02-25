@@ -11,30 +11,36 @@ import { NextButton } from '../../components/NextButton'
 import { OtherModal } from '../../components/OtherModal'
 import { modalOpened } from '../other/otherSlice'
 import { Actions } from '../../components/Actions'
+import { selectQuestionById, questionMultipleAnswered } from '../form/formSlice'
 
 
 export const Q3 = props => {
     const history = useHistory()
     const dispatch = useDispatch()
-    const question = useSelector(selectQuestion)
-    const options = useSelector(selectAllOptions)
-    const answers = useSelector(selectAnswers)
+    const question = useSelector(state => selectQuestionById(state, 3))
+    // const answerId = question.answerId 
+    const answers = question.answers || []
+    const setMultipleAnswers = answers => dispatch(questionMultipleAnswered({ questionId: 3, answers }))
 
+
+    const allOptions = question.options
+    const options = allOptions
 
     const goToPage2 = () => {
         history.push("/2")
     }
     const goToPage4 = () => {
-        history.push("4")
+        history.push("/4")
     }
 
   
 
-    const handleOptionClick = (answerId, reason) => {
-        if(answerId === "5") {
-            dispatch(modalOpened())
-        }
-        else dispatch(answersUpdated({ answerId, reason }))
+    const handleOptionClick = (answers) => {
+        // if(answerId === "5") {
+        //     dispatch(modalOpened())
+        // }
+        dispatch(setMultipleAnswers(answers))
+        // else dispatch(answersUpdated({ answerId, reason }))
     }
     
     const optionsContent = options.map(option => 
@@ -50,7 +56,7 @@ export const Q3 = props => {
     return (
         <div>
             <div className="container">
-                <Question question={question} />
+                <Question question={question.question} />
                 { optionsContent }
             </div>
             <OtherModal />
