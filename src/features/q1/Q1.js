@@ -17,7 +17,8 @@ export const Q1 = props => {
     const search = useSelector(selectSearch)
     const answerId = useSelector(selectAnswerId)
     const dispatch = useDispatch()
-   
+    // const questions = useSelector(selectAllQuestions)
+    // const formStatus = useSelector(state => state.form.status )
   
     const setAnswerId = answerId => dispatch(answerIdUpdated({ answerId }))
     console.log(answerId)

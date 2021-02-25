@@ -10,6 +10,8 @@ import q5Reducer from '../features/q5/q5Slice'
 import q6Reducer from '../features/q6/q6Slice'
 import dashboardReducer from '../features/dashboard/dashboardSlice'
 import commentReducer from '../features/comment/commentSlice'
+import formReducer from '../features/form/formSlice'
+
 
 
 
@@ -26,5 +28,6 @@ export default configureStore({
     q6: q6Reducer,
     dashboard: dashboardReducer,
     comment: commentReducer,
+    form: formReducer,
   },
 });
