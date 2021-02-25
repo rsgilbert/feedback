@@ -14,7 +14,7 @@ const experienceData = [
 ];
 
 const purposeData = [
-    { name: "E-Registration", count: 10 },
+    { name: "E-Reg", count: 10 },
     { name: "Master Data", count: 30 },
     { name: "Cash Limits", count: 40 },
     { name: "Warrants", count: 24 },
@@ -38,18 +38,28 @@ export const Dash = (props) => {
         <div
             className="container mydashboard"
         >
-            <h3>Purpose of visiting the Treasury Service Center</h3>
+            <h1>What was your purpose of visiting the Treasury Service Center?</h1>
             <MyBarGraph data={purposeData} />
 
-            <h3>Experience at Treasury Service Center</h3>
+            <div>
+                <h2>Comments</h2>
+                <p>Great job you guys!</p>
+                <p>The service center was closed</p>                
+                <p>There was no one to serve</p>
+                <p>It takes too long to receive an updates</p>
+            </div>
+
+            <br></br>
+            <h1>What was your experience at Treasury Service Center</h1>
             <MyLineChart data={experienceData} />
 
+            <br></br>
             <div>
-                <h1>Comments</h1>
-                <p>Very long line</p>                
-                <p>My issue was not resolved</p>
+                <h2>Comments</h2>
+                <p>People did not wear masks</p>
+                <p>I went throught avery long line</p>                
+                <p>Some people are rude here</p>
                 <p>It takes too long to receive an updates</p>
-
             </div>
 
         </div>

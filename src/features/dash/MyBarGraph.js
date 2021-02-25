@@ -32,7 +32,7 @@ export default function MyBarGraph({ data }) {
       <BarChart 
             width={600}
             height={300}
-            data={ data2 }
+            data={ data }
             margin={{
             top: 5, right: 30, left: 20, bottom: 5,
             }}>
@@ -40,7 +40,8 @@ export default function MyBarGraph({ data }) {
 			<XAxis dataKey="name" />
 			<YAxis />
             <Legend />    
-            <Bar dataKey= "uv" fill="pink" />
+            <Bar dataKey= "count" fill="pink" />
+            {/* <Bar dataKey= "uv" fill="pink" /> */}
       </BarChart>
     );
 }
